@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'Article edit' | trans }}</h1>
+
+    <form action="{{ path('article_update', { 'id': entity.id }) }}" method="post" {{ form_enctype(edit_form) }}>
+        {{ form_widget(edit_form) }}
+        <p>
+            <button type="submit">{{ 'Edit' | trans }}</button>
+        </p>
+    </form>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('article') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

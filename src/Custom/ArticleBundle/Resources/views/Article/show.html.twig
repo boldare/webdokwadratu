@@ -1,0 +1,26 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'Article' | trans }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr><th>{{ 'Title' | trans }}</th><td>{{ entity.title }}</td></tr>
+            <tr><th>{{ 'Content' | trans }}</th><td>{{ entity.content }}</td></tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('article') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('article_edit', { 'id': entity.id }) }}">
+                {{ 'Edit' | trans }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

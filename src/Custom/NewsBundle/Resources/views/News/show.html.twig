@@ -1,0 +1,37 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'News' | trans }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr><th>{{ 'Header' | trans }}</th>     <td>{{ entity.header }}</td>                          </tr>
+            <tr><th>{{ 'Extract' | trans }}</th>    <td>{{ entity.extract }}</td>                         </tr>
+            <tr><th>{{ 'Content' | trans }}</th>    <td>{{ entity.content }}</td>                         </tr>
+            <tr><th>{{ 'Created at' | trans }}</th> <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>   </tr>
+            <tr><th>{{ 'Updated at' | trans }}</th> <td>{{ entity.updatedat|date('Y-m-d H:i:s') }}</td>   </tr>
+        </tbody>
+    </table>
+
+    {% include "NewsBundle:News:photos.html.twig" with {'entity': entity} only %}
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('news') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('news_edit', { 'id': entity.id }) }}">
+                {{ 'Edit' | trans }}
+            </a>
+        </li>
+        <li>
+            <form action="{{ path('news_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button type="submit">{{ 'Delete' | trans }}</button>
+            </form>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,3 @@
+PartnerController:
+    resource: "@PartnerBundle/Resources/config/routing/partner.yml"
+    prefix:   /admin/partner

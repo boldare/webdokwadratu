@@ -1,0 +1,44 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'Person list' | trans }}</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>{{ 'First name' | trans }}</th>
+                <th>{{ 'Last name' | trans }}</th>
+                <th>{{ 'Email' | trans }}</th>
+                <th>{{ 'Actions' | trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.firstname }}</td>
+                <td>{{ entity.lastname }}</td>
+                <td>{{ entity.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('person_show', { 'id': entity.id }) }}">{{ 'show' | trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('person_edit', { 'id': entity.id }) }}">{{ 'edit' | trans }}</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('person_new') }}">
+                {{ 'Create a new entry' | trans }} 
+            </a>
+        </li>
+    </ul>
+{% endblock %}

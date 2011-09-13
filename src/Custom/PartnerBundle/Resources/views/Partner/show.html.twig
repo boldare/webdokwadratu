@@ -1,0 +1,34 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'Partner' | trans }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr><th>{{ 'Name' | trans }}</th><td>{{ entity.name }}</td></tr>
+            <tr><th>{{ 'Title' | trans }}</th><td>{{ entity.title }}</td></tr>
+            <tr><th>{{ 'Description' | trans }}</th><td>{{ entity.description }}</td></tr>
+            <tr><th>{{ 'Website' | trans }}</th><td>{{ entity.website }}</td></tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('partner') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('partner_edit', { 'id': entity.id }) }}">
+                {{ 'Edit' | trans }}
+            </a>
+        </li>
+        <li>
+            <form action="{{ path('partner_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button type="submit">{{ 'Delete' | trans }}</button>
+            </form>
+        </li>
+    </ul>
+{% endblock %}

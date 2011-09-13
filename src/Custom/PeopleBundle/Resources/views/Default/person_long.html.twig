@@ -1,0 +1,47 @@
+{% import 'PeopleBundle:Default:borders.html.twig' as borders %}
+<div class="list-person-inner">
+    <div class="list-person-photo">
+        <a href="{{ path('PeopleBundlePersonNameWithColor', {'firstname': person.firstName, 'lastname': person.lastName, 'color': loop.index % 5}) }}" class="{{- borders.color(loop.index) -}} box-h-more-inner box-h-more-inner-first box-h-more-inner01">
+            <img src="/{{ person.largePhoto.webPath }}" alt="" width="222" height="222" />
+        </a>
+    </div>
+    <div class="list-person-description">
+        <h3>
+            <a href="{{ path('PeopleBundlePersonNameWithColor', {'firstname': person.firstName, 'lastname': person.lastName, 'color': loop.index % 5}) }}">
+                  {{ person.lastName }} {{ person.firstName }} 
+            </a>
+        </h3>
+        {{ person.summary | raw }}
+
+
+        <ul class="list-links">
+            <li>
+                <a href="{{ path('PeopleBundlePersonNameWithColor', {'firstname': person.firstName, 'lastname': person.lastName, 'color': loop.index % 5}) }}">{{ 'details' | trans }}</a>
+            </li>
+        </ul>
+    </div> 
+
+    <div class="list-person-links">
+        <ul class="list-links">
+            {% if not person.website is empty %}
+                <li><a target="_blank" href="{{ person.website }}">{{ person.website }}</a></li>
+            {% endif %}
+        </ul>
+
+        <ul class="list-socials2">
+            {% if not person.twitter is empty %}
+                <li><a target="_blank" class="twitter" href="{{ person.twitter }}"></a></li>
+            {% endif %}
+            {% if not person.facebook is empty %}
+                <li><a target="_blank" class="facebook" href="{{ person.facebook }}"></a></li>
+            {% endif %}
+            {% if not person.linkedin is empty %}
+                <li><a target="_blank" class="linkedin" href="{{ person.linkedin }}"></a></li>
+            {% endif %}
+            {% if not person.website is empty %}
+                <li><a target="_blank" class="home" href="{{ person.website }}"></a></li>
+            {% endif %}
+        </ul>
+    </div>
+    <div class="clear"></div>
+</div>

@@ -1,0 +1,26 @@
+AuthorBundle:
+    resource: "@AuthorBundle/Resources/config/routing.yml"
+    prefix:   /
+
+PartnerBundle:
+    resource: "@PartnerBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ArticleBundle:
+    resource: "@ArticleBundle/Resources/config/routing.yml"
+    prefix:   /
+
+MainBundle:
+    resource: "@MainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+PeopleBundle:
+    resource: "@PeopleBundle/Resources/config/routing.yml"
+    prefix:   /
+
+NewsBundle:
+    resource: "@NewsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"

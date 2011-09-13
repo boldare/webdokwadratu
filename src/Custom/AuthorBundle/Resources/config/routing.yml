@@ -1,0 +1,3 @@
+AuthroController:
+    resource: "@AuthorBundle/Resources/config/routing/author.yml"
+    prefix:   /admin/autor

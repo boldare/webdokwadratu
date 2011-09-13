@@ -1,0 +1,49 @@
+PeopleBundleHome:
+    pattern:  /
+    defaults: { _controller: PeopleBundle:Default:slider }
+
+PeopleBundlePersonName:
+    pattern:  /{firstname}.{lastname}
+    defaults: { _controller: PeopleBundle:Default:personName }
+
+PeopleBundlePersonNameWithColor:
+    pattern:  /{color}/{firstname}.{lastname}
+    defaults: { _controller: PeopleBundle:Default:personName }
+
+PeopleBundlePeople:
+    pattern:  /wszyscy
+    defaults: { _controller: PeopleBundle:Default:people }
+
+PeopleBundleInitial:
+    pattern:   /ludzie/inicjaly/{letter}
+    defaults: { _controller: PeopleBundle:Default:initial }
+
+PeopleBundleRange:
+    pattern:   /ludzie/inicjaly/zakres/{from}/{to}
+    defaults:  { _controller: PeopleBundle:Default:range }
+
+people_bundle_search:
+    pattern: /ludzie/szukaj
+    defaults: { _controller: PeopleBundle:Default:search }
+
+PeopleBundlePerson:
+    pattern:  /osoba/{id}
+    defaults: { _controller: PeopleBundle:Default:person }
+
+PeopleBundlePersonWithColor:
+    pattern:  /osoba/{id}/{color}
+    defaults: { _controller: PeopleBundle:Default:person }
+
+PeopleController:
+    resource: "@PeopleBundle/Resources/config/routing/person.yml"
+    prefix:   /admin/osoba
+
+IndustryController:
+    resource: "@PeopleBundle/Resources/config/routing/industry.yml"
+    prefix:   /admin/branza
+
+ComputerController:
+    resource: "@PeopleBundle/Resources/config/routing/computer.yml"
+    prefix:   /admin/komputer
+
+

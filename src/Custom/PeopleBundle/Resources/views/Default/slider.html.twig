@@ -1,0 +1,45 @@
+{% extends "::base.html.twig" %}
+
+{% import 'PeopleBundle:Default:borders.html.twig' as borders %}
+{% block content %}
+    {% render "PeopleBundle:Default:alphabet" %}
+    <div class="box-search">
+        {% render "PeopleBundle:Default:searchbox" %}
+    </div>
+    <div class="clear"></div>
+
+    <div id="fp_gallery" class="fp_gallery">
+        <ul id="fp_galleryList" class="fp_galleryList">
+            <li>{{ 'Gallery' | trans }}</li>
+        </ul>
+    
+        <div id="fp_scrollWrapper" class="fp_scrollWrapper">
+            <div id="slider" class="slider"></div>
+        </div>
+
+        <div id="fp_thumbContainer">
+            <div id="fp_thumbScroller">
+                <div class="container">
+                    {% for person in people %}
+                        <div class="content">
+                            <div>
+                                <a href="{{ path('PeopleBundlePersonNameWithColor', {'firstname': person.firstName, 'lastname': person.lastName, 'color': loop.index % 5}) }}">
+                                    <img src="/{{ person.largePhoto.webPath }}"/>
+                                </a>
+                                <span class="content-span"></span>
+                                <a href="{{ path('PeopleBundlePersonNameWithColor', {'firstname': person.firstName, 'lastname': person.lastName, 'color': loop.index % 5}) }}" class="name {{ borders.color(loop.index) }}">{{ person.firstName }} {{ person.lastName }}</a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <div id="fp_overlay" class="fp_overlay"></div>
+        <div id="fp_loading" class="fp_loading"></div>
+        <div id="fp_next" class="fp_next"></div>
+        <div id="fp_prev" class="fp_prev"></div>
+        <div id="fp_close" class="fp_close">Close preview</div>
+    </div>
+
+{% endblock %}

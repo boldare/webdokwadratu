@@ -1,0 +1,15 @@
+<li data-id="id-{{ loop.index }}" data-value={{ person.lastName|lower }} class="i0{{ person.industry.id }} c0{{ person.firstComputer.id}}">
+    <a href="{{ path('PeopleBundlePersonName', {'firstname': person.firstName, 'lastname': person.lastName}) }}">
+        <img src="/{{ person.getMainPhoto.getWebPath }}" width="120" height="120" />
+        <strong>{{ person.firstName }} {{ person.lastName }}</strong>
+        <span>
+            {% for tag in person.tags %}
+                {{ tag.name -}}
+                {% if not loop.last %}
+                    {{- ',' -}}
+                {% endif %}
+            {% endfor %}
+        </span>
+        <span class="all-bg"></span>
+    </a>
+</li>

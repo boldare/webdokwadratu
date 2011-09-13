@@ -1,0 +1,30 @@
+computer:
+    pattern:  /
+    defaults: { _controller: "PeopleBundle:Computer:index" }
+
+computer_show:
+    pattern:  /{id}/pokaz
+    defaults: { _controller: "PeopleBundle:Computer:show" }
+
+computer_new:
+    pattern:  /nowy
+    defaults: { _controller: "PeopleBundle:Computer:new" }
+
+computer_create:
+    pattern:  /utworz
+    defaults: { _controller: "PeopleBundle:Computer:create" }
+    requirements: { _method: post }
+
+computer_edit:
+    pattern:  /{id}/edytuj
+    defaults: { _controller: "PeopleBundle:Computer:edit" }
+
+computer_update:
+    pattern:  /{id}/aktualizuj
+    defaults: { _controller: "PeopleBundle:Computer:update" }
+    requirements: { _method: post }
+
+computer_delete:
+    pattern:  /{id}/usun
+    defaults: { _controller: "PeopleBundle:Computer:delete" }
+    requirements: { _method: post }

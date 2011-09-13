@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+{% set menu_people = 'active' %}
+
+{% block content %}
+    <div id="content-top">
+        {% render "PeopleBundle:Default:alphabet" %}
+        <div class="box-search">
+            {% render "PeopleBundle:Default:searchbox" %}
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div id="box-all">
+        {% include "PeopleBundle:Default:filters.html.twig" with {'industries': industries, 'computers': computers} only %}
+        <div class="all">
+            <ul id="list" class="image-grid">
+                {% for person in people %}
+                    {% include "PeopleBundle:Default:element.html.twig" with {'person': person, 'loop': loop} only %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}

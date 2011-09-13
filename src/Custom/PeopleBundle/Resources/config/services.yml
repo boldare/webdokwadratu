@@ -1,0 +1,7 @@
+parameters:
+#    people.example.class: Custom\PeopleBundle\Example
+
+services:
+#    people.example:
+#        class: %people.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

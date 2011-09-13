@@ -1,0 +1,30 @@
+industry:
+    pattern:  /
+    defaults: { _controller: "PeopleBundle:Industry:index" }
+
+industry_show:
+    pattern:  /{id}/pokaz
+    defaults: { _controller: "PeopleBundle:Industry:show" }
+
+industry_new:
+    pattern:  /nowa
+    defaults: { _controller: "PeopleBundle:Industry:new" }
+
+industry_create:
+    pattern:  /utworz
+    defaults: { _controller: "PeopleBundle:Industry:create" }
+    requirements: { _method: post }
+
+industry_edit:
+    pattern:  /{id}/edytuj
+    defaults: { _controller: "PeopleBundle:Industry:edit" }
+
+industry_update:
+    pattern:  /{id}/aktualizuj
+    defaults: { _controller: "PeopleBundle:Industry:update" }
+    requirements: { _method: post }
+
+industry_delete:
+    pattern:  /{id}/usun
+    defaults: { _controller: "PeopleBundle:Industry:delete" }
+    requirements: { _method: post }

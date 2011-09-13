@@ -1,0 +1,30 @@
+author:
+    pattern:  /
+    defaults: { _controller: "AuthorBundle:Author:index" }
+
+author_show:
+    pattern:  /{id}/pokaz
+    defaults: { _controller: "AuthorBundle:Author:show" }
+
+author_new:
+    pattern:  /nowy
+    defaults: { _controller: "AuthorBundle:Author:new" }
+
+author_create:
+    pattern:  /utworz
+    defaults: { _controller: "AuthorBundle:Author:create" }
+    requirements: { _method: post }
+
+author_edit:
+    pattern:  /{id}/edytuj
+    defaults: { _controller: "AuthorBundle:Author:edit" }
+
+author_update:
+    pattern:  /{id}/aktualizuj
+    defaults: { _controller: "AuthorBundle:Author:update" }
+    requirements: { _method: post }
+
+author_delete:
+    pattern:  /{id}/usun
+    defaults: { _controller: "AuthorBundle:Author:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,30 @@
+person:
+    pattern:  /
+    defaults: { _controller: "PeopleBundle:Person:index" }
+
+person_show:
+    pattern:  /{id}/pokaz
+    defaults: { _controller: "PeopleBundle:Person:show" }
+
+person_new:
+    pattern:  /nowa
+    defaults: { _controller: "PeopleBundle:Person:new" }
+
+person_create:
+    pattern:  /utworz
+    defaults: { _controller: "PeopleBundle:Person:create" }
+    requirements: { _method: post }
+
+person_edit:
+    pattern:  /{id}/edytuj
+    defaults: { _controller: "PeopleBundle:Person:edit" }
+
+person_update:
+    pattern:  /{id}/aktualizuj
+    defaults: { _controller: "PeopleBundle:Person:update" }
+    requirements: { _method: post }
+
+person_delete:
+    pattern:  /{id}/usun
+    defaults: { _controller: "PeopleBundle:Person:delete" }
+    requirements: { _method: post }

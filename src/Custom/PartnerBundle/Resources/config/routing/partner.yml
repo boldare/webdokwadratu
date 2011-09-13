@@ -1,0 +1,30 @@
+partner:
+    pattern:  /
+    defaults: { _controller: "PartnerBundle:Partner:index" }
+
+partner_show:
+    pattern:  /{id}/pokaz
+    defaults: { _controller: "PartnerBundle:Partner:show" }
+
+partner_new:
+    pattern:  /nowy
+    defaults: { _controller: "PartnerBundle:Partner:new" }
+
+partner_create:
+    pattern:  /utworz
+    defaults: { _controller: "PartnerBundle:Partner:create" }
+    requirements: { _method: post }
+
+partner_edit:
+    pattern:  /{id}/edytuj
+    defaults: { _controller: "PartnerBundle:Partner:edit" }
+
+partner_update:
+    pattern:  /{id}/aktualizuj
+    defaults: { _controller: "PartnerBundle:Partner:update" }
+    requirements: { _method: post }
+
+partner_delete:
+    pattern:  /{id}/usun
+    defaults: { _controller: "PartnerBundle:Partner:delete" }
+    requirements: { _method: post }

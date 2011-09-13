@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+{% set menu_partners = 'active' %}
+
+{% block content %}
+    <div id="content-top">
+        <div class="box-title">
+            <h1>{{ 'Partners' | trans }}</h1>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+        
+    <div id="partners">
+        <div id="box-logo">
+            {% for partner in partners %}
+                <div class="prartners-row">
+                    <div class="partners-logo partners-{{ partner.name }}"></div>
+                    <div class="box-partner">
+                        <h3>{{ partner.title }}</h3>
+                        {{ partner.description | raw }}
+                    </div>
+                    <div class="partners-links">
+                        <a href="{{ partner.website }}">{{ partner.website }}</a>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    <h1>{{ 'Person' | trans }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr><th>{{ 'First name' | trans }}</th>   <td>{{ entity.firstname }}</td>   </tr>
+            <tr><th>{{ 'Last name' | trans }}</th>    <td>{{ entity.lastname }}</td>    </tr>
+            <tr><th>Twitter</th>      <td>{{ entity.twitter }}</td>     </tr>
+            <tr><th>Facebook</th>     <td>{{ entity.facebook }}</td>    </tr>
+            <tr><th>Linkedin</th>     <td>{{ entity.linkedin }}</td>    </tr>
+            <tr><th>{{ 'Website' | trans }}</th>      <td>{{ entity.website }}</td>     </tr>
+            <tr><th>Email</th>        <td>{{ entity.email }}</td>       </tr>
+            <tr><th>{{ 'Description' | trans }}</th>  <td>{{ entity.description }}</td> </tr>
+            <tr><th>{{ 'Quotation' | trans }}</th>    <td>{{ entity.quotation }}</td>   </tr>
+            {% include "PeopleBundle:Person:tags.html.twig" with {'tags': entity.tags} only %}
+        </tbody>
+    </table>
+
+    {% include "PeopleBundle:Person:photos.html.twig" with {'photos': entity.photos} only %}
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('person') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('person_edit', { 'id': entity.id }) }}">
+                {{ 'Edit' | trans }}
+            </a>
+        </li>
+        <li>
+            <form action="{{ path('person_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button type="submit">{{ 'Delete' | trans }}</button>
+            </form>
+        </li>
+    </ul>
+{% endblock %}

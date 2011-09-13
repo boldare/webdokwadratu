@@ -1,0 +1,11 @@
+NewsBundleIndex:
+    pattern:  /aktualnosci
+    defaults: { _controller: NewsBundle:Default:index }
+
+NewsBundleShow:
+    pattern:  /aktualnosci/{id}
+    defaults: { _controller: NewsBundle:Default:show }
+
+NewsController:
+    resource: "@NewsBundle/Resources/config/routing/news.yml"
+    prefix:   /admin/aktualnosci

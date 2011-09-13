@@ -1,0 +1,30 @@
+news:
+    pattern:  /
+    defaults: { _controller: "NewsBundle:News:index" }
+
+news_show:
+    pattern:  /{id}/
+    defaults: { _controller: "NewsBundle:News:show" }
+
+news_new:
+    pattern:  /nowy
+    defaults: { _controller: "NewsBundle:News:new" }
+
+news_create:
+    pattern:  /utworz
+    defaults: { _controller: "NewsBundle:News:create" }
+    requirements: { _method: post }
+
+news_edit:
+    pattern:  /{id}/edytuj
+    defaults: { _controller: "NewsBundle:News:edit" }
+
+news_update:
+    pattern:  /{id}/aktualizuj
+    defaults: { _controller: "NewsBundle:News:update" }
+    requirements: { _method: post }
+
+news_delete:
+    pattern:  /{id}/usun
+    defaults: { _controller: "NewsBundle:News:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}webdokwadratu.pl{% endblock %}</title>
+        <meta name="Description" content="ludzie polskiego internetu" /> 
+        <meta name="Keywords" content="internet, ludzie" /> 
+
+        <meta http-equiv="Content-Language" content="pl" />
+        <meta name="Author" content="Chilid.pl" />
+        <meta http-equiv="Reply-To" content="chilid@chilid.pl" />
+
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% stylesheets '../app/Resources/public/css/*'
+            output="css/combined.css"
+        %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        {% javascripts '../app/Resources/public/js/jquery.js'
+            '../app/Resources/public/js/*'
+            output="js/combined.js"
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-2289163-29']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="header">
+                {% include 'MainBundle:Default:logo.html.twig' %}
+                {% include 'MainBundle:Default:menu.html.twig' %}
+            <div class="clear"></div>
+
+
+            <div id="content">
+                {% block content %}{%endblock %}
+            </div>
+            
+            <div id="footer">
+                {% include 'MainBundle:Default:footer.html.twig' %}
+                {% block back_button %}{% endblock %}
+            </div>
+            <div id="box-fb-outer">
+                <a id="box-fb" class="fb-hide" title="" href="http://www.facebook.com/webdokwadratu"></a>
+            </div>
+        </div>
+    </body>
+</html>

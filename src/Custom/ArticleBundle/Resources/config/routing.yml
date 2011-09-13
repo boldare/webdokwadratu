@@ -1,0 +1,3 @@
+ArticleController:
+    resource: "@ArticleBundle/Resources/config/routing/article.yml"
+    prefix:   /admin/artykul

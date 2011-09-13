@@ -1,0 +1,49 @@
+{% extends '::base.html.twig' %}
+{% set menu_authors = 'active' %}
+
+{% block content %}
+    <div id="content-top">
+        <div class="box-title">
+            <h1>{{ 'Authors' | trans }}</h1>
+        </div>
+        <div class="clear"></div>
+    </div>
+    
+    <div id="authors">
+        {% for author in authors %}
+            <div class="box-author">
+                <div class="box-author-name">
+                    <p>{{ author.firstName }} {{ author.lastName }}</p>
+                </div>
+
+                <div class="box-author-description">
+                    {{ author.description | raw }}
+                </div>
+
+                <div class="box-author-links">
+                    <ul class="links">
+                        {% if author.hasWebsite %}
+                            <li><a href="{{ author.website }}" target="_blank">{{ author.website }}</a></li>
+                        {% endif %}
+                        {% if author.hasEmail %}
+                            <li><a href="mailto:{{ author.email }}">{{ author.email }}</a></li>
+                        {% endif %}
+                    </ul>
+
+                    <ul class="list-socials2">
+                        {% if author.hasTwitter %}
+                            <li><a class="twitter" href="{{ author.twitter }}" target="_blank"></a></li>
+                        {% endif %}
+                        {% if author.hasFacebook %}
+                            <li><a class="facebook" href="{{ author.facebook }}" target="_blank"></a></li>
+                        {% endif %}
+                        {% if author.hasLinkedin %}
+                            <li><a class="linkedin" href="{{ author.linkedin }}" target="_blank"></a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

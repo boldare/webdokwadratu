@@ -1,0 +1,10 @@
+<div class="box-alphabet">
+    {% for letter in 'a'..'z' %}
+        {% if letter in alphabet %}
+            <a href="{{ path('PeopleBundleInitial', {'letter' :letter}) }}">{{ letter }}</a>
+        {% else %}
+            <span>{{ letter }}</span>
+        {% endif %}
+    {% endfor %}
+    <div class="clear"></div>
+</div>

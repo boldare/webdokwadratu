@@ -1,0 +1,12 @@
+parameters:
+    custom.newsbundle.news.repository.class: Custom\NewsBundle\Repository\NewsRepository
+    custom.newsbundle.news.entity.class: Custom\NewsBundle\Entity\News
+
+services:
+    custom.newsbundle.repository.news:
+        class: %custom.newsbundle.news.repository.class%
+        factory_service: doctrine.orm.default_entity_manager
+        factory_method: getRepository
+        arguments: [%custom.newsbundle.news.entity.class%]
+        calls:
+            - [ setContainer, [@service_container]]

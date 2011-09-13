@@ -1,0 +1,11 @@
+<tr>
+    <th>{{ 'Tags' | trans }}</th>
+    <td>
+        {% for tag in tags %}
+            {{ tag.name -}}
+            {% if not loop.last %}
+                {{- ',' -}}
+            {% endif %}
+        {% endfor %}
+    </td>
+</tr>

@@ -1,0 +1,9 @@
+<div class="record_photos">
+    {% for photo in photos %}
+        <div class="record_photo">
+            <a href="/{{ photo.webPath }}">
+                <img class="record_photo" src="/{{ photo.webPath }}" width="150" heigth="150"/>
+            </a>
+        </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,30 @@
+article:
+    pattern:  /
+    defaults: { _controller: "ArticleBundle:Article:index" }
+
+article_show:
+    pattern:  /{id}/pokaz
+    defaults: { _controller: "ArticleBundle:Article:show" }
+
+article_new:
+    pattern:  /nowy
+    defaults: { _controller: "ArticleBundle:Article:new" }
+
+article_create:
+    pattern:  /utworz
+    defaults: { _controller: "ArticleBundle:Article:create" }
+    requirements: { _method: post }
+
+article_edit:
+    pattern:  /{id}/edytuj
+    defaults: { _controller: "ArticleBundle:Article:edit" }
+
+article_update:
+    pattern:  /{id}/aktualizuj
+    defaults: { _controller: "ArticleBundle:Article:update" }
+    requirements: { _method: post }
+
+article_delete:
+    pattern:  /{id}/usun
+    defaults: { _controller: "ArticleBundle:Article:delete" }
+    requirements: { _method: post }

@@ -1,0 +1,48 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'News list' }}</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>{{ 'Header' | trans }}</th>
+                <th>{{ 'Extract' | trans }}</th>
+                <th>{{ 'Content' | trans }}</th>
+                <th>{{ 'Created at' | trans }}</th>
+                <th>{{ 'Updated at' | trans }}</th>
+                <th>{{ 'Actions' | trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.header }}</td>
+                <td>{{ entity.extract }}</td>
+                <td>{{ entity.content }}</td>
+                <td>{{ entity.createdat|date('Y-m-d H:i:s') }}</td>
+                <td>{{ entity.updatedat|date('Y-m-d H:i:s') }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('news_show', { 'id': entity.id }) }}">{{ 'show' | trans }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('news_edit', { 'id': entity.id }) }}">{{ 'edit' | trans }}</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('news_new') }}">
+                {{ 'Create a new entry' | trans }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

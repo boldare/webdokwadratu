@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'Author creation' | trans }}</h1>
+
+    <form action="{{ path('author_create') }}" method="post" {{ form_enctype(form) }}>
+        {{ form_widget(form) }}
+        <p>
+            <button type="submit">{{ 'Create' | trans }}</button>
+        </p>
+    </form>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('author') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

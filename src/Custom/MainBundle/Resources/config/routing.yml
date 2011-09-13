@@ -1,0 +1,23 @@
+MainBundleAbout:
+    pattern:  /o-projekcie
+    defaults: { _controller: MainBundle:Default:about }
+
+MainBundlePartners:
+    pattern:  /partnerzy
+    defaults: { _controller: MainBundle:Default:partners }
+
+MainBundleAuthors:
+    pattern:  /autorzy
+    defaults: { _controller: MainBundle:Default:authors }
+
+MainBundleAlbum:
+    pattern:  /album
+    defaults: { _controller: MainBundle:Default:album }
+
+MainBundleContact:
+    pattern:  /kontakt
+    defaults: { _controller: MainBundle:Default:contact }
+
+MainBundleAdmin:
+    pattern:  /admin
+    defaults: { _controller: MainBundle:Default:admin }

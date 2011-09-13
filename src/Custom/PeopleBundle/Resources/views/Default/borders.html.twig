@@ -1,0 +1,15 @@
+{% macro color(index, color) %}
+    {% set remainder = color|default(index) % 5 %}
+
+    {% if remainder == 0 %}
+        border-color1
+    {% elseif remainder == 1 %}
+        border-color2 
+    {% elseif remainder == 2 %}
+        border-color3
+    {% elseif remainder == 3 %}
+        border-color4
+    {% else %}
+        border-color5
+    {% endif %}
+{% endmacro %}

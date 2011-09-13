@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+{% set menu_news = 'active' %}
+
+{% block content %}
+    <div id="content-top">
+        <div class="box-title">
+          <h1>{{ 'News' | trans }}</h1>
+        </div>
+
+        <div class="pager">
+            <div id="navigation">
+                {{ paginator|paginate }}
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div class="box-post-short">
+        {% for entity in paginator %}
+            {% include "NewsBundle:Default:news.html.twig" with {"news": entity} only %}
+        {% endfor %}
+    <div class="clear"></div>
+{% endblock %}

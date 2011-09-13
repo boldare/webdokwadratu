@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+    <div id="content-top">
+        <div class="box-title">
+            <h1>{{ header }}</h1>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div id="list-person">
+        {% for person in people %}
+            {% include "PeopleBundle:Default:person_long.html.twig" with {'person': person, 'loop': loop} only %}
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block back_button %}
+    <a class="link-back" href="{{ path('PeopleBundlePeople') }}">{{ 'All people' | trans }}</a>
+{% endblock %}

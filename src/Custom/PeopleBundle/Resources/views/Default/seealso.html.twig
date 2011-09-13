@@ -1,0 +1,14 @@
+{% import 'PeopleBundle:Default:borders.html.twig' as borders %}
+{% for person in people %}
+    <div class="person-see-also">
+        <a class="{{ borders.color(loop.index) }}" href="{{ path('PeopleBundlePersonWithColor', {'id': person.id, 'color': loop.index}) }}">
+            <img src="/{{ person.getMainPhoto.getWebPath }}" />
+        </a>
+        <span class="content-span"></span>
+        <a class="name" href="{{ path('PeopleBundlePersonWithColor', {'id': person.id, 'color': loop.index}) }}">
+            {{ person.firstName }} {{ person.lastName }}
+        </a>
+    </div>
+{% endfor %}
+
+<div class="clear"></div>

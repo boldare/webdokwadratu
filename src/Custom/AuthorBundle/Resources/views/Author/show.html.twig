@@ -1,0 +1,33 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>{{ 'Author' | trans }}</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr><th>{{ 'First name' | trans }}</th><td>{{ entity.firstname }}</td></tr>
+            <tr><th>{{ 'Last name' | trans }}</th><td>{{ entity.lastname }}</td></tr>
+            <tr><th>{{ 'Description' | trans }}</th><td>{{ entity.description }}</td></tr>
+        </tbody>
+    </table>
+
+    <ul class="record_actions">
+        <li>
+            <a href="{{ path('author') }}">
+                {{ 'Back to the list' | trans }}
+            </a>
+        </li>
+        <li>
+            <a href="{{ path('author_edit', { 'id': entity.id }) }}">
+                {{ 'Edit' | trans }}
+            </a>
+        </li>
+        <li>
+            <form action="{{ path('author_delete', { 'id': entity.id }) }}" method="post">
+                {{ form_widget(delete_form) }}
+                <button type="submit">{{ 'Delete' | trans }}</button>
+            </form>
+        </li>
+    </ul>
+{% endblock %}

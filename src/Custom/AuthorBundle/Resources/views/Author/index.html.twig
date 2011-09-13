@@ -1,0 +1,54 @@
+{% extends "::base.html.twig" %}
+
+{% block content %}
+    {% include "MainBundle:Default:admin_menu.html.twig" %}
+    <h1>Author list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>{{ 'First name' | trans }}</th>
+                <th>{{ 'Last name' | trans }}</th>
+                <th>{{ 'Description' | trans }}</th>
+                <th>{{ 'Website' | trans }}</th>
+                <th>Twitter</th>
+                <th>Facebook</th>
+                <th>Linkedin</th>
+                <th>Email</th>
+                <th>{{ 'Actions' | trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td>{{ entity.firstname }}</td>
+                <td>{{ entity.lastname }}</td>
+                <td>{{ entity.description }}</td>
+                <td>{{ entity.website }}</td>
+                <td>{{ entity.twitter }}</td>
+                <td>{{ entity.facebook }}</td>
+                <td>{{ entity.linkedin }}</td>
+                <td>{{ entity.email }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('author_show', { 'id': entity.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('author_edit', { 'id': entity.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('author_new') }}">
+                {{ 'Create a new entry' | trans }}
+            </a>
+        </li>
+    </ul>
+{% endblock %}

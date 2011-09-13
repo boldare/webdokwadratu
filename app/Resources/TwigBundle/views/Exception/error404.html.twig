@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}webdokwadratu.pl{% endblock %}</title>
+        <meta http-equiv="Content-Language" content="pl" />
+        <meta name="Author" content="Chilid.pl" />
+        <meta http-equiv="Reply-To" content="chilid@chilid.pl" />
+
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+        {% stylesheets '../app/Resources/public/css/*'
+            output="css/combined.css"
+        %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+        {% endstylesheets %}
+
+        {% javascripts '../app/Resources/public/js/jquery.js'
+            '../app/Resources/public/js/*'
+            output="js/combined.js"
+        %}
+            <script type="text/javascript" src="{{ asset_url }}"></script>
+        {% endjavascripts %}
+    </head>
+    <body>
+        <div id="wrapper"> 
+            <div id="box404"> 
+                <img src="/images/bg404x1.png" alt=""/>
+                <a href="{{ path('PeopleBundleHome') }}">{{ 'Back to the homepage' | trans }}</a> 
+                <img src="/images/bg404x2.png" alt=""/> 
+            </div>
+ 
+            <div id="footer">
+                {% include 'MainBundle:Default:footer.html.twig' %}
+                <a class="link-back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
+            </div>
+          
+            <div id="box-fb-outer">
+                <a id="box-fb" class="fb-hide" title="" href="http://www.facebook.com/webdokwadratu"></a>
+            </div>
+        </div>
+    </body> 
+</html>

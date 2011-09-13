@@ -1,0 +1,30 @@
+{% macro link(from, to, route, alphabet, class) %}
+    {% set display = false %}
+    {% for letter in from..to %}
+        {% if letter in alphabet %}
+            {% set display = true %}
+        {% endif %}
+    {% endfor %}
+    {% if display %}
+        <a class="{{ class|default('') }}" href="{{ path(route, {'from': from, 'to': to}) }}"> {{ from|upper }} - {{ to|upper }}</a>
+    {% else %}
+        <span class="{{ class|default('') }}">{{ from|upper }} - {{ to|upper }}</span>
+    {% endif %}
+{% endmacro %}
+
+<ul>
+    <li>{{ _self.link('a', 'b', 'PeopleBundleRange', alphabet) }}</li>
+    <li>{{ _self.link('c', 'd', 'PeopleBundleRange', alphabet) }}</li>
+    <li>{{ _self.link('e', 'f', 'PeopleBundleRange', alphabet) }}</li>
+    <li class="li-last">{{ _self.link('g', 'h', 'PeopleBundleRange', alphabet) }}</li>
+    <br />
+    <li>{{ _self.link('i', 'j', 'PeopleBundleRange', alphabet) }}</li>
+    <li>{{ _self.link('k', 'l', 'PeopleBundleRange', alphabet) }}</li>
+    <li>{{ _self.link('m', 'n', 'PeopleBundleRange', alphabet) }}</li>
+    <li class="li-last">{{ _self.link('o', 'p', 'PeopleBundleRange', alphabet) }}</li>
+    <br />
+    <li>{{ _self.link('r', 's', 'PeopleBundleRange', alphabet) }}</li>
+    <li>{{ _self.link('t', 'u', 'PeopleBundleRange', alphabet) }}</li>
+    <li>{{ _self.link('v', 'w', 'PeopleBundleRange', alphabet) }}</li>
+    <li class="li-last">{{ _self.link('x', 'z', 'PeopleBundleRange', alphabet, 'last') }}</li>
+</ul>
