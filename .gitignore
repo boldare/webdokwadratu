@@ -1,0 +1,10 @@
+/app/bootstrap*
+/app/config/parameters.ini
+/app/cache/*
+/app/logs/*
+/web/uploads/people/*
+/web/uploads/news/*
+/web/js/combined*
+/web/css/combined*
+/web/bundles/
+/vendor/
