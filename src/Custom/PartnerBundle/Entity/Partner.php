@@ -5,7 +5,7 @@ namespace Custom\PartnerBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Custom\PartnerBundle\Repository\PartnerRepository")
  * @ORM\Table(name="partner")
  */
 class Partner
@@ -36,6 +36,11 @@ class Partner
      * @ORM\Column(type="string", length=1024)
      */
     protected $website;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    protected $weight;
 
     /**
      * Get id
@@ -125,5 +130,25 @@ class Partner
     public function getWebsite()
     {
         return $this->website;
+    }
+
+    /**
+     * Get weight
+     *
+     * @return integer 
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+    /**
+     * Set weight
+     *
+     * @param integer $weight
+     */
+    public function setWeight($weight)
+    {
+        $this->weight = $weight;
     }
 }
