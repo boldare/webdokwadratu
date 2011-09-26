@@ -21,6 +21,7 @@ class AuthorType extends AbstractType
             ->add('facebook')
             ->add('linkedin')
             ->add('email')
+            ->add('weight')
         ;
     }
 

@@ -156,6 +156,11 @@ class PersonController extends Controller
             throw $this->createNotFoundException('Unable to find Person entity.');
         }
 
+        for ($i = count($entity->getPhotos()); $i < self::PHOTOS; $i++)
+        {
+            $entity->addPhotos(new \Custom\PeopleBundle\Entity\Photo());
+        }
+
         $editForm   = $this->createForm(new PersonType(), $entity);
         $deleteForm = $this->createDeleteForm($id);
 
