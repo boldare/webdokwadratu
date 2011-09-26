@@ -14,6 +14,7 @@ class PartnerType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('website')
+            ->add('weight')
         ;
     }
 
