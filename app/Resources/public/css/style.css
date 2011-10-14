@@ -309,6 +309,12 @@ a.link-more {
 .prartners-row:hover .partners-chilid {
   background-position: 0 -222px;
 }
+.partners-diamonds {
+  background: url("/images/partners-diamonds.png") no-repeat;
+}
+.prartners-row:hover .partners-diamonds {
+  background-position: 0 -222px;
+}
 .partners-wsiz {
   background: url("/images/partners-wsiz.png") no-repeat;
 }
