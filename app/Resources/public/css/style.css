@@ -63,8 +63,8 @@ a:hover {
 #content #content-top .box-alphabet a:first-child {
   padding: 3px 3px 3px 0;
 }
-#content #content-top .box-alphabet a:hover {
-  color: #00DAFD;
+#content #content-top .box-alphabet a:hover, #content .box-alphabet a:hover {
+  color: #00DAFD !important;
 }
 .post-short a.link-more {
   padding: 10px 60px 35px 12px;
@@ -280,9 +280,9 @@ a.link-more {
   width: 140px;
 }
 .partners-links a {
-  background: url("/images/bg-list-links.png") no-repeat 10px 60px;
+  background: url("/images/bg-list-links.png") no-repeat 0 60px;
   display: inline-block;
-  padding: 55px 20px !important;
+  padding: 55px 10px !important;
 }
 .box-author-links ul.links a {
   display: inline-block;
@@ -593,6 +593,9 @@ div.cite {
   background: url('/images/cite-top.png') no-repeat;
   padding: 25px 0 0 50px;
   margin: 30px 0;
+}
+div.cite p.cite {
+  text-align: left !important;
 }
 #album img {
   margin: 9px;
