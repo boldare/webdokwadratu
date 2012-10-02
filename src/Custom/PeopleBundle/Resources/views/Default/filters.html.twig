@@ -1,46 +1,34 @@
-<div class="clear"></div>
-<div id="box-all-sort2">
-    <ul class="splitter">
-        <li>
-            <h3>{{ 'Filters' | trans }}</h3>
-            <div id="filter-industry" class="button">
-                <span class="div-select">{{ 'Industry' | trans }}</span>
-                <ul class="select-dropdown splitter">
-                    <li class="segment-1 selected-1"><a href="#" data-value="all">{{ 'All' | trans }}</a></li>
-                    {% for industry in industries %}
-                        <li class="segment-1"><a href="#" data-value="i0{{ industry.id }}">{{ industry.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
+<ul class="splitter">
+    <li>
+        <h3>{{ 'Filters' | trans }}</h3>
+        <div id="filter-industry" class="button">
+            <span class="div-select">{{ 'Industry' | trans }}</span>
+            <ul class="select-dropdown splitter">
+                <li class="segment-1 selected-1"><a href="#" data-value="all">{{ 'All' | trans }}</a></li>
+                {% for industry in industries %}
+                    <li class="segment-1"><a href="#" data-value="i0{{ industry.id }}">{{ industry.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
 
-            <div id="filter-computer" class="button">
-                <span class="div-select">{{ 'Computer' | trans }}</span>
-                <ul class="select-dropdown splitter">
-                    <li class="segment-1 selected-1"><a href="#" data-value="all">{{ 'All' | trans }}</a></li>
-                    {% for computer in computers %}
-                        <li class="segment-1"><a href="#" data-value="c0{{ computer.id }}">{{ computer.name }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </li>
-        <li>
-            <h3>SORTOWANIE</h3>
-            <div id="sort-name" class="button">
-                <div class="div-select">Nazwisko</div>
-                <ul class="select-dropdown splitter">
-                    <li class="segment-1"><a href="#" data-value="asc">A-Z</a></li>
-                    <li class="segment-2"><a href="#" data-value="desc">Z-A</a></li>
-                </ul>
-            </div>
-        </li>
-    </ul>
-
-    <ul>
-        <li>
-            <h3 class="sorta">{{ 'Alphabet' | trans }}</h3>
-            <div id="sorta">
-                {% render "PeopleBundle:Default:ranges" %}
-            </div>
-        </li>
-    </ul>
-</div>
+        <div id="filter-computer" class="button">
+            <span class="div-select">{{ 'Computer' | trans }}</span>
+            <ul class="select-dropdown splitter">
+                <li class="segment-1 selected-1"><a href="#" data-value="all">{{ 'All' | trans }}</a></li>
+                {% for computer in computers %}
+                    <li class="segment-1"><a href="#" data-value="c0{{ computer.id }}">{{ computer.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </li>
+    <li>
+        <h3>SORTOWANIE</h3>
+        <div id="sort-name" class="button">
+            <div class="div-select">Nazwisko</div>
+            <ul class="select-dropdown splitter">
+                <li class="segment-1"><a href="#" data-value="asc">A-Z</a></li>
+                <li class="segment-2"><a href="#" data-value="desc">Z-A</a></li>
+            </ul>
+        </div>
+    </li>
+</ul>

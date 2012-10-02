@@ -2,22 +2,17 @@
 {% set menu_news = 'active' %}
 
 {% block content %}
-    <div id="content-top">
-        <div class="box-title">
-          <h1>{{ 'News' | trans }}</h1>
+    <div class="content" role="content">
+        <h2>{{ 'News' | trans }}</h2>
+
+        <div class="pagination">
+            {{ paginator|paginate }}
         </div>
 
-        <div class="pager">
-            <div id="navigation">
-                {{ paginator|paginate }}
-            </div>
+        <div class="news">
+            {% for entity in paginator %}
+                {% include "NewsBundle:Default:news.html.twig" with {"news": entity} only %}
+            {% endfor %}
         </div>
-        <div class="clear"></div>
     </div>
-
-    <div class="box-post-short">
-        {% for entity in paginator %}
-            {% include "NewsBundle:Default:news.html.twig" with {"news": entity} only %}
-        {% endfor %}
-    <div class="clear"></div>
 {% endblock %}

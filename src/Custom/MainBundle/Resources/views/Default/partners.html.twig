@@ -2,27 +2,36 @@
 {% set menu_partners = 'active' %}
 
 {% block content %}
-    <div id="content-top">
-        <div class="box-title">
-            <h1>{{ 'Partners' | trans }}</h1>
-        </div>
-        <div class="clear"></div>
-    </div>
+    <div class="content" role="content">
+        <h2>{{ 'Partners' | trans }}</h2>
 
-        
-    <div id="partners">
-        <div id="box-logo">
+        <div class="mobile">
             {% for partner in partners %}
-                <div class="prartners-row">
-                    <div class="partners-logo partners-{{ partner.name }}"></div>
-                    <div class="box-partner">
+                <div class="partner">
+                    <div class="media-block">
+                        <div class="partners-{{ partner.name }} media"></div>
+                        <div class="text">
+                            <div class="wrapper">
+                                <h3>{{ partner.title }}</h3>
+                                <a href="{{ partner.website }}">{{ partner.website }}</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{ partner.description | raw }}
+                </div>
+            {% endfor %}
+        </div>
+
+        <div class="desktop">
+            {% for partner in partners %}
+                <div class="partner media-block">
+                    <div class="partners-{{ partner.name }} media"></div>
+                    <div class="text">
                         <h3>{{ partner.title }}</h3>
+                        <a href="{{ partner.website }}">{{ partner.website }}</a>
                         {{ partner.description | raw }}
                     </div>
-                    <div class="partners-links">
-                        <a href="{{ partner.website }}">{{ partner.website }}</a>
-                    </div>
-                    <div class="clear"></div>
                 </div>
             {% endfor %}
         </div>

@@ -1,3 +1,5 @@
+.DS_Store
+._*
 /app/bootstrap*
 /app/config/parameters.ini
 /app/cache/*

@@ -1,9 +1,22 @@
-<ul id="menu">
-    <li class="{{ menu_about|default('') }}"><a href="{{ path('MainBundleAbout') }}">{{ 'About' | trans }}</a></li>
-    <li class="{{ menu_people|default('') }}"><a href="{{ path('PeopleBundlePeople') }}">{{ 'All people' | trans }}</a></li>
-    <li class="{{ menu_news|default('') }}"><a href="{{ path('NewsBundleIndex') }}">{{ 'News' | trans }}</a></li>
-    <li class="{{ menu_partners|default('') }}"><a href="{{ path('MainBundlePartners') }}">{{ 'Partners' | trans }}</a></li>
-    <li class="{{ menu_authors|default('') }}"><a href="{{ path('MainBundleAuthors') }}">{{ 'Authors' | trans }}</a></li>
-    <li class="{{ menu_album|default('') }}"><a href="{{ path('MainBundleAlbum') }}">{{ 'Album' | trans }}</a></li>
-    <li class="{{ menu_contact|default('') }}"><a href="{{ path('MainBundleContact') }}">{{ 'Contact' | trans }}</a></li>
-</ul>
+<nav class="menu">
+	<ul>
+	    <li><a href="{{ path('MainBundleAbout') }}">{{ 'About' | trans }}</a></li>
+	    <li><a href="{{ path('PeopleBundlePeople') }}">{{ 'All people' | trans }}</a></li>
+	    <li><a href="{{ path('NewsBundleIndex') }}">{{ 'News' | trans }}</a></li>
+	    <li><a href="{{ path('MainBundlePartners') }}">{{ 'Partners' | trans }}</a></li>
+	    <li><a href="{{ path('MainBundleAuthors') }}">{{ 'Authors' | trans }}</a></li>
+	    <li><a href="{{ path('MainBundleAlbum') }}">{{ 'Album' | trans }}</a></li>
+	    <li><a href="{{ path('MainBundleContact') }}">{{ 'Contact' | trans }}</a></li>
+	</ul>
+</nav>
+
+<select class="menu">
+    <option value="{{ path('PeopleBundleHome') }}">{{ 'Home' | trans }}</option>
+    <option value="{{ path('MainBundleAbout') }}">{{ 'About' | trans }}</option>
+    <option value="{{ path('PeopleBundlePeople') }}">{{ 'All people' | trans }}</option>
+    <option value="{{ path('NewsBundleIndex') }}">{{ 'News' | trans }}</option>
+    <option value="{{ path('MainBundlePartners') }}">{{ 'Partners' | trans }}</option>
+    <option value="{{ path('MainBundleAuthors') }}">{{ 'Authors' | trans }}</option>
+    <option value="{{ path('MainBundleAlbum') }}">{{ 'Album' | trans }}</option>
+    <option value="{{ path('MainBundleContact') }}">{{ 'Contact' | trans }}</option>
+</select>

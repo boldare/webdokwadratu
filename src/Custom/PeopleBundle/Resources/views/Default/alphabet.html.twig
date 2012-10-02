@@ -1,10 +1,13 @@
-<div class="box-alphabet">
+<div class="alphabet">
     {% for letter in 'a'..'z' %}
         {% if letter in alphabet %}
             <a href="{{ path('PeopleBundleInitial', {'letter' :letter}) }}">{{ letter }}</a>
         {% else %}
             <span>{{ letter }}</span>
         {% endif %}
+
+        {% if loop.index == '13' %}
+        	<br>
+        {% endif %}
     {% endfor %}
-    <div class="clear"></div>
 </div>
