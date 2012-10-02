@@ -30,16 +30,16 @@
 
         <ul class="list-socials2">
             {% if not person.twitter is empty %}
-                <li><a target="_blank" class="twitter" href="{{ person.twitter }}"></a></li>
+                <li><a class="twitter" href="{{ person.twitter }}"></a></li>
             {% endif %}
             {% if not person.facebook is empty %}
-                <li><a target="_blank" class="facebook" href="{{ person.facebook }}"></a></li>
+                <li><a class="facebook" href="{{ person.facebook }}"></a></li>
             {% endif %}
             {% if not person.linkedin is empty %}
-                <li><a target="_blank" class="linkedin" href="{{ person.linkedin }}"></a></li>
+                <li><a class="linkedin" href="{{ person.linkedin }}"></a></li>
             {% endif %}
             {% if not person.website is empty %}
-                <li><a target="_blank" class="home" href="{{ person.website }}"></a></li>
+                <li><a class="home" href="{{ person.website }}"></a></li>
             {% endif %}
         </ul>
     </div>

@@ -1,31 +1,36 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Web2 - Ludzie Polskiego Internetu{% endblock %}</title>
+        <meta charset="utf-8" />
+        <title>{% block title %}webdokwadratu.pl{% endblock %}</title>
+        
         <meta name="Description" content="ludzie polskiego internetu" /> 
         <meta name="Keywords" content="internet, ludzie" /> 
-
         <meta http-equiv="Content-Language" content="pl" />
-        <meta name="Author" content="Chilid.pl" />
         <meta http-equiv="Reply-To" content="chilid@chilid.pl" />
+        <meta name="Author" content="Chilid.pl" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+
         {% stylesheets '../app/Resources/public/css/*'
-            output="css/combined.css"
+            output="css/style.css"
         %}
-            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}" />
+            <link href="{{ asset_url }}" media="screen, projection" rel="stylesheet"  type="text/css"/>
         {% endstylesheets %}
 
-        {% javascripts '../app/Resources/public/js/jquery.js'
+        {% javascripts 
+            '../app/Resources/public/js/jquery-1.8.2.min.js'
             '../app/Resources/public/js/*'
-            output="js/combined.js"
+            output="js/minified.js"
         %}
-            <script type="text/javascript" src="{{ asset_url }}"></script>
+            <script src="{{ asset_url }}" type="text/javascript"></script>
         {% endjavascripts %}
 
         <script type="text/javascript">
-
           var _gaq = _gaq || [];
           _gaq.push(['_setAccount', 'UA-2289163-29']);
           _gaq.push(['_trackPageview']);
@@ -35,28 +40,23 @@
             ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
             var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
           })();
-
         </script>
     </head>
+
     <body>
-        <div id="wrapper">
-            <div id="header">
-                {% include 'MainBundle:Default:logo.html.twig' %}
-                {% include 'MainBundle:Default:menu.html.twig' %}
-            <div class="clear"></div>
+        <header role="header">
+            {% include 'MainBundle:Default:logo.html.twig' %}
+            {% include 'MainBundle:Default:menu.html.twig' %}
+        </header>
 
-
-            <div id="content">
-                {% block content %}{%endblock %}
-            </div>
-            
-            <div id="footer">
-                {% include 'MainBundle:Default:footer.html.twig' %}
-                {% block back_button %}{% endblock %}
-            </div>
-            <div id="box-fb-outer">
-                <a id="box-fb" class="fb-hide" title="" href="http://www.facebook.com/webdokwadratu"></a>
-            </div>
+        <div class="container">
+            {% block content %}{%endblock %}
         </div>
+            
+        <footer role="footer">
+            {% include 'MainBundle:Default:footer.html.twig' %}
+        </footer>
+
+         <!-- <a class="facebook" href="http://www.facebook.com/webdokwadratu">Facebook</a> -->
     </body>
 </html>

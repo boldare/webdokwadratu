@@ -2,41 +2,30 @@
 {% set menu_news = 'active' %}
 
 {% block content %}
-    <div id="content-top">
-        <div class="box-title">
-            <h1>{{ 'News' | trans }}</h1>
-        </div>
-        <div class="clear"></div>
+    <div class="content">
+        <h2>{{ 'News' | trans }}</h2>
+        
+        <article class="single-news media-block">
+            <img src="/{{ entity.getWebPath }}" alt="" class="media" />
+
+            <section class="text">
+                <h4>{{ entity.header }}</h4>
+                <span class="date">{{ entity.updatedat|date('d/m/Y') }}</span>
+                
+                <p>{{ entity.content }}</p>
+
+                {% if not next is empty %}
+                    <a href="{{ path('NewsBundleShow', {'id': next.id }) }}" class="nav" title="{{ 'Next news' | trans }}">{{ 'Next news' | trans }}</a>
+                {% endif %}
+
+                <a href="{{ path('NewsBundleIndex') }}" class="nav" title="{{ 'Back to news list' | trans }}">{{ 'Back to news list' | trans }}</a>
+
+                {% if not previous is empty %}
+                    <a href="{{ path('NewsBundleShow', {'id': previous.id}) }}" class="nav" title="{{ 'Prevoius news' | trans }}">{{ 'Prevoius news' | trans }}</a>
+                {% endif %}
+                
+                {% include "MainBundle:Default:share.html.twig" %}
+            </section>
+        </article>
     </div>
-
-    <div class="box-post-full">
-        <div class="box-post-left">
-            <img src="/{{ entity.getWebPath }}" width="328" height="205"/>
-        </div>
-
-        <div class="box-post-right">
-            <h2>{{ entity.header }}</h2>
-
-            <span class="post-date">{{ entity.updatedat|date('d/m/Y') }}</span>
-            
-            <p>
-                {{ entity.content }}
-            </p>
-            <p></p>
-
-            {% if not next is empty %}
-                <a href="{{ path('NewsBundleShow', {'id': next.id }) }}" class="link-more" title="{{ 'Next news' | trans }}">{{ 'Next news' | trans }}</a>
-            {% endif %}
-
-            <a href="{{ path('NewsBundleIndex') }}" class="link-more" title="{{ 'Back to news list' | trans }}">{{ 'Back to news list' | trans }}</a>
-
-            {% if not previous is empty %}
-                <a href="{{ path('NewsBundleShow', {'id': previous.id}) }}" class="link-more" title="{{ 'Prevoius news' | trans }}">{{ 'Prevoius news' | trans }}</a>
-            {% endif %}
-            
-            {% include "MainBundle:Default:share.html.twig" %}
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="clear"></div>   
 {% endblock %}
