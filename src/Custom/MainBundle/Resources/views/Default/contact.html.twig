@@ -2,11 +2,8 @@
 {% set menu_contact = 'active' %}
 
 {% block content %}
-    <div id="content-top">
-        <h1>{{ article.title}}</h1>
-    </div>
-
-    <div id="contact">
+    <div class="content contact" role="content">
+    	<h2>{{ article.title}}</h2>
         {{ article.content | raw }}
     </div>
 {% endblock %}

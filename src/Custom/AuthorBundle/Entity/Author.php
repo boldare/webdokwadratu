@@ -5,7 +5,7 @@ namespace Custom\AuthorBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="Custom\AuthorBundle\Repository\AuthorRepository")
+ * @ORM\Entity
  * @ORM\Table(name="author")
  */
 class Author
@@ -56,11 +56,6 @@ class Author
      * @ORM\Column(type="string", length=1024, nullable=true)
      */
     protected $email;
-
-    /**
-     * @ORM\Column(type="integer", nullable=true)
-     */
-    protected $weight;
 
     /**
      * Get id
@@ -160,7 +155,6 @@ class Author
     {
         return !empty($this->twitter);
     }
-
     /**
      * Set twitter
      *
@@ -185,7 +179,6 @@ class Author
     {
         return !empty($this->facebook);
     }
-
     /**
      * Set facebook
      *
@@ -206,16 +199,10 @@ class Author
         return $this->facebook;
     }
 
-    /**
-     * Returns if linked in is not empty
-     *
-     * @return bool
-     */
     public function hasLinkedin()
     {
         return !empty($this->linkedin);
     }
-
     /**
      * Set linkedin
      *
@@ -240,7 +227,6 @@ class Author
     {
         return !empty($this->email);
     }
-
     /**
      * Set email
      *
@@ -259,25 +245,5 @@ class Author
     public function getEmail()
     {
         return $this->email;
-    }
-
-    /**
-     * Get weight
-     *
-     * @return integer 
-     */
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-
-    /**
-     * Set weight
-     *
-     * @param integer $weight
-     */
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
     }
 }

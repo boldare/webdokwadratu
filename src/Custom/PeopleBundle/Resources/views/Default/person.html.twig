@@ -4,7 +4,7 @@
 {% block content %}
     <div id="h">
         <div id="h-left">
-            <h1>{{ person.firstName}} {{ person.lastName }}</h1>
+            <h2>{{ person.firstName}} {{ person.lastName }}</h2>
 
             <ul class="list-socials">
                 {% if not person.twitter is empty %}
@@ -56,15 +56,13 @@
             <div class="photo-big {{ borders.color(color) }}">
                   <img width="410" height="410" src="/{{ person.photos.next.getWebPath }}" alt="" />
             </div>
-            {% spaceless %}
-                <div class="photo-small">
-                    {% for photo in person.photos %}
-                        {% if loop.index > 2 %}
-                            <img width="120" height="120" class="photo-small photo-small0{{ loop.index -2 }}" src="/{{ photo.getWebPath }}" />
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% endspaceless %}
+            <div class="photo-small">
+                {% for photo in person.photos %}
+                    {% if not loop.first %}
+                        <img width="120" height="120" class="photo-small photo-small0{{ loop.index -1 }}" src="/{{ photo.getWebPath }}" />
+                    {% endif %}
+                {% endfor %}
+            </div>
 
 
             <div id="tags">
