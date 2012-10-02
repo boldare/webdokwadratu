@@ -1,0 +1,38 @@
+<?php
+namespace Custom\PartnerBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="article")
+ */
+class Partner
+{
+    /**
+     * @ORM\Id
+     * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
+     * @ORM\Column(type="string", length=256)
+     */
+    protected $name;
+
+    /**
+     * @ORM\Column(type="string", length=256)
+     */
+    protected $title;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    protected $description;
+
+    /**
+     * @ORM\Column(type="string", length=1024)
+     */
+    protected $website;
+}
