@@ -1,4 +1,11 @@
 $(document).ready(function() {
+    var addr = 'option[value="' + window.location.pathname + '"]';
+    $('select.menu').find(addr).attr('selected', true);
+    
+    $('select.menu').on('change', function(){
+        window.location = $(this).val();
+    });
+
     var clickedButton;
 
     $('#list > li:visible').eq(6).addClass('clear');
