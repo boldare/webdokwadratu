@@ -1,0 +1,17 @@
+@font-face {
+		font-family: 'MyriadPro';
+		src: url('../../fonts/myriadpro-semibold.eot');
+		src: url('../../fonts/myriadpro-semibold.eot?#iefix') format('embedded-opentype'),
+				 url('../../fonts/myriadpro-semibold.woff') format('woff'),
+				 url('../../fonts/myriadpro-semibold.ttf') format('truetype'),
+				 url('../../fonts/myriadpro-semibold.svg#myriadpro-semibold') format('svg');
+		font-weight: normal;
+		font-style: normal;
+}
+
+@mixin font-myriad($size: 12px, $line: 1em, $weight: normal) {
+	font-family: MyriadPro, Helvetica, Arial, sans-serif;
+	font-size: $size;
+	line-height: $line;
+	font-weight: $weight;
+}
