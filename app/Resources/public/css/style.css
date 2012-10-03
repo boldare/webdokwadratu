@@ -683,19 +683,22 @@ h4 {
 .person .photos .list {
   overflow: hidden;
   *zoom: 1;
-  margin: 0 0 30px 0;
 }
-/* line 576, ../sass/style.scss */
+/* line 575, ../sass/style.scss */
 .person .photos .list img {
   width: 33.33%;
   height: auto;
   float: left;
 }
-/* line 585, ../sass/style.scss */
+/* line 583, ../sass/style.scss */
+.person .see-also {
+  margin: 30px 0 0 0;
+}
+/* line 586, ../sass/style.scss */
 .person .see-also h2 {
   margin: 0 0 15px 0;
 }
-/* line 589, ../sass/style.scss */
+/* line 590, ../sass/style.scss */
 .person .see-also li {
   display: -moz-inline-box;
   -moz-box-orient: vertical;
@@ -710,26 +713,26 @@ h4 {
 .person .see-also li {
   *display: inline;
 }
-/* line 595, ../sass/style.scss */
+/* line 596, ../sass/style.scss */
 .person .see-also li a {
   display: block;
 }
-/* line 599, ../sass/style.scss */
+/* line 600, ../sass/style.scss */
 .person .see-also li img {
   width: 100%;
   height: 100%;
   margin: 0 0 -3px 0;
   opacity: 0.5;
 }
-/* line 607, ../sass/style.scss */
+/* line 608, ../sass/style.scss */
 .person .see-also li:hover img {
   opacity: 1;
 }
-/* line 611, ../sass/style.scss */
+/* line 612, ../sass/style.scss */
 .person .see-also li:hover span {
   display: block;
 }
-/* line 617, ../sass/style.scss */
+/* line 618, ../sass/style.scss */
 .person .see-also span {
   width: 100%;
   display: none;
@@ -742,17 +745,17 @@ h4 {
   line-height: 16px;
   background: rgba(0, 0, 0, 0.5);
 }
-/* line 631, ../sass/style.scss */
+/* line 632, ../sass/style.scss */
 .person .share-buttons {
   overflow: hidden;
   *zoom: 1;
   margin: 0 0 30px 0;
 }
-/* line 635, ../sass/style.scss */
+/* line 636, ../sass/style.scss */
 .person .share-buttons .social {
   float: left;
 }
-/* line 639, ../sass/style.scss */
+/* line 640, ../sass/style.scss */
 .person .share-buttons .back {
   float: right;
   color: #040404;
@@ -760,177 +763,177 @@ h4 {
   display: block;
   padding: 0 0 0 12px;
 }
-/* line 646, ../sass/style.scss */
+/* line 647, ../sass/style.scss */
 .person .share-buttons .back:hover {
   color: #828282;
 }
-/* line 652, ../sass/style.scss */
+/* line 653, ../sass/style.scss */
 .person ul.list-socials {
   clear: both;
   margin: 10px 0;
   height: 30px;
 }
-/* line 657, ../sass/style.scss */
+/* line 658, ../sass/style.scss */
 .person ul.list-socials li {
   float: left;
   margin: 0 2px;
 }
-/* line 661, ../sass/style.scss */
+/* line 662, ../sass/style.scss */
 .person ul.list-socials li a {
   background: url("/images/bg-socials.png") no-repeat;
   width: 30px;
   height: 30px;
   display: block;
 }
-/* line 667, ../sass/style.scss */
+/* line 668, ../sass/style.scss */
 .person ul.list-socials li a.twitter {
   background-position: 0 0;
 }
-/* line 670, ../sass/style.scss */
+/* line 671, ../sass/style.scss */
 .person ul.list-socials li a.twitter:hover {
   background-position: 0 -36px;
 }
-/* line 673, ../sass/style.scss */
+/* line 674, ../sass/style.scss */
 .person ul.list-socials li a.facebook {
   background-position: -34px 0;
 }
-/* line 676, ../sass/style.scss */
+/* line 677, ../sass/style.scss */
 .person ul.list-socials li a.facebook:hover {
   background-position: -34px -36px;
 }
-/* line 679, ../sass/style.scss */
+/* line 680, ../sass/style.scss */
 .person ul.list-socials li a.linkedin {
   background-position: -68px 0;
 }
-/* line 682, ../sass/style.scss */
+/* line 683, ../sass/style.scss */
 .person ul.list-socials li a.linkedin:hover {
   background-position: -68px -36px;
 }
 
-/* line 688, ../sass/style.scss */
+/* line 689, ../sass/style.scss */
 .empty {
   padding: 30px 0;
 }
-/* line 691, ../sass/style.scss */
+/* line 692, ../sass/style.scss */
 .empty h3 {
   margin: 0 0 10px 0;
 }
-/* line 695, ../sass/style.scss */
+/* line 696, ../sass/style.scss */
 .empty .back {
   color: #040404;
   background: url("/images/ico-link-more.png") no-repeat 3px 4px;
   display: block;
   padding: 0 0 0 12px;
 }
-/* line 701, ../sass/style.scss */
+/* line 702, ../sass/style.scss */
 .empty .back:hover {
   color: #828282;
 }
 
-/* line 707, ../sass/style.scss */
+/* line 708, ../sass/style.scss */
 .result {
   padding: 20px 0;
   border-bottom: 1px solid #E1E1E1;
 }
-/* line 711, ../sass/style.scss */
+/* line 712, ../sass/style.scss */
 .result h3 {
   margin: 0 0 15px 0;
 }
-/* line 715, ../sass/style.scss */
+/* line 716, ../sass/style.scss */
 .result > .media {
   width: 220px;
   height: 220px;
   margin: 0 20px 0 0;
 }
-/* line 720, ../sass/style.scss */
+/* line 721, ../sass/style.scss */
 .result > .media img {
   width: 100%;
   height: auto;
 }
-/* line 726, ../sass/style.scss */
+/* line 727, ../sass/style.scss */
 .result p {
   margin: 0;
 }
-/* line 730, ../sass/style.scss */
+/* line 731, ../sass/style.scss */
 .result .contact {
   float: right;
   width: 220px;
   margin-left: 20px;
 }
-/* line 736, ../sass/style.scss */
+/* line 737, ../sass/style.scss */
 .result:last-child {
   border: 0;
 }
-/* line 740, ../sass/style.scss */
+/* line 741, ../sass/style.scss */
 .result .socials {
   overflow: hidden;
   *zoom: 1;
   margin: 5px 0;
 }
-/* line 744, ../sass/style.scss */
+/* line 745, ../sass/style.scss */
 .result .socials li {
   float: left;
   margin: 0 2px;
 }
-/* line 748, ../sass/style.scss */
+/* line 749, ../sass/style.scss */
 .result .socials li a {
   background: url("/images/bg-socials-mini.png") no-repeat;
   width: 21px;
   height: 21px;
   display: block;
 }
-/* line 756, ../sass/style.scss */
+/* line 757, ../sass/style.scss */
 .result .socials .twitter {
   background-position: 0 0;
 }
-/* line 759, ../sass/style.scss */
+/* line 760, ../sass/style.scss */
 .result .socials .twitter:hover {
   background-position: 0 -30px;
 }
-/* line 764, ../sass/style.scss */
+/* line 765, ../sass/style.scss */
 .result .socials .facebook {
   background-position: -24px 0;
 }
-/* line 767, ../sass/style.scss */
+/* line 768, ../sass/style.scss */
 .result .socials .facebook:hover {
   background-position: -24px -30px;
 }
-/* line 772, ../sass/style.scss */
+/* line 773, ../sass/style.scss */
 .result .socials .linkedin {
   background-position: -48px 0;
 }
-/* line 775, ../sass/style.scss */
+/* line 776, ../sass/style.scss */
 .result .socials .linkedin:hover {
   background-position: -48px -30px;
 }
-/* line 780, ../sass/style.scss */
+/* line 781, ../sass/style.scss */
 .result .socials .home {
   background-position: -72px 0;
 }
-/* line 783, ../sass/style.scss */
+/* line 784, ../sass/style.scss */
 .result .socials .home:hover {
   background-position: -72px -30px;
 }
-/* line 789, ../sass/style.scss */
+/* line 790, ../sass/style.scss */
 .result .links {
   margin: 0 0 5px 0;
 }
-/* line 792, ../sass/style.scss */
+/* line 793, ../sass/style.scss */
 .result .links li {
   margin: 0 0 2px 0;
 }
-/* line 796, ../sass/style.scss */
+/* line 797, ../sass/style.scss */
 .result .links a {
   color: #040404;
   background: url("/images/ico-link-more.png") no-repeat 3px 4px;
   display: block;
   padding: 0 0 0 12px;
 }
-/* line 802, ../sass/style.scss */
+/* line 803, ../sass/style.scss */
 .result .links a:hover {
   color: #828282;
 }
-/* line 808, ../sass/style.scss */
+/* line 809, ../sass/style.scss */
 .result .details {
   color: #040404;
   background: url("/images/ico-link-more.png") no-repeat 3px 4px;
@@ -938,32 +941,32 @@ h4 {
   padding: 0 0 0 12px;
   margin: 20px 0 0 0;
 }
-/* line 815, ../sass/style.scss */
+/* line 816, ../sass/style.scss */
 .result .details:hover {
   color: #828282;
 }
 
-/* line 826, ../sass/style.scss */
+/* line 827, ../sass/style.scss */
 .border-color1 {
   border-bottom: 2px solid #EC6310;
 }
 
-/* line 827, ../sass/style.scss */
+/* line 828, ../sass/style.scss */
 .border-color2 {
   border-bottom: 2px solid #B5EC66;
 }
 
-/* line 828, ../sass/style.scss */
+/* line 829, ../sass/style.scss */
 .border-color3 {
   border-bottom: 2px solid #66BEEC;
 }
 
-/* line 829, ../sass/style.scss */
+/* line 830, ../sass/style.scss */
 .border-color4 {
   border-bottom: 2px solid #BF529D;
 }
 
-/* line 830, ../sass/style.scss */
+/* line 831, ../sass/style.scss */
 .border-color5 {
   border-bottom: 2px solid #FFD200;
 }

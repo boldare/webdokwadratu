@@ -58,13 +58,13 @@
                   <img src="/{{ person.photos.next.getWebPath }}" class="{{ borders.color(color) }}" alt="" />
             </div>
 
-            <div class="list">
+            {# <div class="list">
                 {% for photo in person.photos %}
                     {% if not loop.first %}
                         <img class="photo-small0{{ loop.index -1 }}" src="/{{ photo.getWebPath }}" />
                     {% endif %}
                 {% endfor %}
-            </div>
+            </div> #}
 
             <div class="see-also">
                 <h2>{{ 'See also' | trans }}</h2>
