@@ -117,6 +117,12 @@
     }
   }
 
+  .result {
+    > .media {
+      display: none;
+    }
+  }
+
   .album {
     img {
       width: 100%;
@@ -130,6 +136,27 @@
 
     li {
       width: 33.33%;
+    }
+  }
+
+  .person {
+    padding: 0 0 30px 0;
+
+    .description {
+      width: 100%;
+      margin: 0 0 30px 0;
+      padding: 0 5%;
+      float: none;
+
+      section {
+        padding: 15px 0;
+      }
+    }
+
+    .photos {
+      width: 100%;
+      padding: 0 5%;
+      float: none;
     }
   }
 }
@@ -218,9 +245,38 @@
     }
   }
 
+  .author {
+    > .media {
+      width: 150px;
+      height: 150px;
+      margin: 0 15px 0 0;
+    }
+  }
+
   .tiles {
     li {
       width: 20%;
+    }
+  }
+
+  .person {
+    padding: 0 0 30px 0;
+
+    .description {
+      width: 100%;
+      margin: 0 0 30px 0;
+      padding: 0 5%;
+      float: none;
+
+      section {
+        padding: 15px 0;
+      }
+    }
+
+    .photos {
+      width: 100%;
+      padding: 0 5%;
+      float: none;
     }
   }
 }
@@ -260,6 +316,19 @@
   }
 
   .author {
+    .contact {
+      float: none;
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .results {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .result {
     .contact {
       float: none;
       width: 100%;

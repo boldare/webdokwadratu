@@ -2,8 +2,8 @@
 {% import 'PeopleBundle:Default:borders.html.twig' as borders %}
 
 {% block content %}
-    <div id="h">
-        <div id="h-left">
+    <div class="person" role="content">
+        <div class="description">
             <h2>{{ person.firstName}} {{ person.lastName }}</h2>
 
             <ul class="list-socials">
@@ -18,8 +18,6 @@
                 {% endif %}
             </ul>
 
-            <div class="clear"></div>
-
             <ul class="list-links">
                 {% if not person.website is empty %}
                     <li><a href="{{ person.website }}" target="_blank">{{ person.website }}</a></li>
@@ -31,39 +29,19 @@
                 <li><b>{{ 'Industry' | trans }}:</b> {{ person.industry.name }}</li>
             </ul>
 
-            <div id="h-description">
+            <section>
                 <p>{{ person.description | raw }}</p>
 
-                <div class="cite">
-                    <p class="cite">{{ person.quotation }}</p>
-                </div>
-            </div>
-
-            {% block back_button %}
-                <a class="link-back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
-            {% endblock %}
+                <blockquote>{{ person.quotation }}</blockquote>
+            </section>
 
             <div class="share-buttons">
                 {% include "MainBundle:Default:share.html.twig" %}
-            </div>
-            <div id="box-h-more">
-                <h2>{{ 'See also' | trans }}</h2>
-                {% include "PeopleBundle:Default:seealso.html.twig" with {'people': people } only %}
-            </div>
-        </div>
 
-        <div id="h-right">
-            <div class="photo-big {{ borders.color(color) }}">
-                  <img width="410" height="410" src="/{{ person.photos.next.getWebPath }}" alt="" />
+                {% block back_button %}
+                    <a class="back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
+                {% endblock %}
             </div>
-            <div class="photo-small">
-                {% for photo in person.photos %}
-                    {% if not loop.first %}
-                        <img width="120" height="120" class="photo-small photo-small0{{ loop.index -1 }}" src="/{{ photo.getWebPath }}" />
-                    {% endif %}
-                {% endfor %}
-            </div>
-
 
             <div id="tags">
                 <h2>{{ 'Keywords' | trans }}</h2>
@@ -74,6 +52,27 @@
                 </ul>
             </div>
         </div>
-        <div class="clear"></div>
+
+        <div class="photos">
+            <div class="main">
+                  <img src="/{{ person.photos.next.getWebPath }}" class="{{ borders.color(color) }}" alt="" />
+            </div>
+
+            <div class="list">
+                {% for photo in person.photos %}
+                    {% if not loop.first %}
+                        <img class="photo-small0{{ loop.index -1 }}" src="/{{ photo.getWebPath }}" />
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="see-also">
+                <h2>{{ 'See also' | trans }}</h2>
+
+                <ul>
+                    {% include "PeopleBundle:Default:seealso.html.twig" with {'people': people } only %}
+                </ul>
+            </div>
+        </div>
     </div>
 {% endblock %}
