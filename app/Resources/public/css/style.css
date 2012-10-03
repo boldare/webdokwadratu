@@ -807,110 +807,130 @@ h4 {
   background-position: -68px -36px;
 }
 
-/* line 690, ../sass/style.scss */
+/* line 688, ../sass/style.scss */
+.empty {
+  padding: 30px 0;
+}
+/* line 691, ../sass/style.scss */
+.empty h3 {
+  margin: 0 0 10px 0;
+}
+/* line 695, ../sass/style.scss */
+.empty .back {
+  color: #040404;
+  background: url("/images/ico-link-more.png") no-repeat 3px 4px;
+  display: block;
+  padding: 0 0 0 12px;
+}
+/* line 701, ../sass/style.scss */
+.empty .back:hover {
+  color: #828282;
+}
+
+/* line 707, ../sass/style.scss */
 .result {
   padding: 20px 0;
   border-bottom: 1px solid #E1E1E1;
 }
-/* line 694, ../sass/style.scss */
+/* line 711, ../sass/style.scss */
 .result h3 {
   margin: 0 0 15px 0;
 }
-/* line 698, ../sass/style.scss */
+/* line 715, ../sass/style.scss */
 .result > .media {
   width: 220px;
   height: 220px;
   margin: 0 20px 0 0;
 }
-/* line 703, ../sass/style.scss */
+/* line 720, ../sass/style.scss */
 .result > .media img {
   width: 100%;
   height: auto;
 }
-/* line 709, ../sass/style.scss */
+/* line 726, ../sass/style.scss */
 .result p {
   margin: 0;
 }
-/* line 713, ../sass/style.scss */
+/* line 730, ../sass/style.scss */
 .result .contact {
   float: right;
   width: 220px;
   margin-left: 20px;
 }
-/* line 719, ../sass/style.scss */
+/* line 736, ../sass/style.scss */
 .result:last-child {
   border: 0;
 }
-/* line 723, ../sass/style.scss */
+/* line 740, ../sass/style.scss */
 .result .socials {
   overflow: hidden;
   *zoom: 1;
   margin: 5px 0;
 }
-/* line 727, ../sass/style.scss */
+/* line 744, ../sass/style.scss */
 .result .socials li {
   float: left;
   margin: 0 2px;
 }
-/* line 731, ../sass/style.scss */
+/* line 748, ../sass/style.scss */
 .result .socials li a {
   background: url("/images/bg-socials-mini.png") no-repeat;
   width: 21px;
   height: 21px;
   display: block;
 }
-/* line 739, ../sass/style.scss */
+/* line 756, ../sass/style.scss */
 .result .socials .twitter {
   background-position: 0 0;
 }
-/* line 742, ../sass/style.scss */
+/* line 759, ../sass/style.scss */
 .result .socials .twitter:hover {
   background-position: 0 -30px;
 }
-/* line 747, ../sass/style.scss */
+/* line 764, ../sass/style.scss */
 .result .socials .facebook {
   background-position: -24px 0;
 }
-/* line 750, ../sass/style.scss */
+/* line 767, ../sass/style.scss */
 .result .socials .facebook:hover {
   background-position: -24px -30px;
 }
-/* line 755, ../sass/style.scss */
+/* line 772, ../sass/style.scss */
 .result .socials .linkedin {
   background-position: -48px 0;
 }
-/* line 758, ../sass/style.scss */
+/* line 775, ../sass/style.scss */
 .result .socials .linkedin:hover {
   background-position: -48px -30px;
 }
-/* line 763, ../sass/style.scss */
+/* line 780, ../sass/style.scss */
 .result .socials .home {
   background-position: -72px 0;
 }
-/* line 766, ../sass/style.scss */
+/* line 783, ../sass/style.scss */
 .result .socials .home:hover {
   background-position: -72px -30px;
 }
-/* line 772, ../sass/style.scss */
+/* line 789, ../sass/style.scss */
 .result .links {
   margin: 0 0 5px 0;
 }
-/* line 775, ../sass/style.scss */
+/* line 792, ../sass/style.scss */
 .result .links li {
   margin: 0 0 2px 0;
 }
-/* line 779, ../sass/style.scss */
+/* line 796, ../sass/style.scss */
 .result .links a {
   color: #040404;
   background: url("/images/ico-link-more.png") no-repeat 3px 4px;
   display: block;
   padding: 0 0 0 12px;
 }
-/* line 785, ../sass/style.scss */
+/* line 802, ../sass/style.scss */
 .result .links a:hover {
   color: #828282;
 }
-/* line 791, ../sass/style.scss */
+/* line 808, ../sass/style.scss */
 .result .details {
   color: #040404;
   background: url("/images/ico-link-more.png") no-repeat 3px 4px;
@@ -918,32 +938,32 @@ h4 {
   padding: 0 0 0 12px;
   margin: 20px 0 0 0;
 }
-/* line 798, ../sass/style.scss */
+/* line 815, ../sass/style.scss */
 .result .details:hover {
   color: #828282;
 }
 
-/* line 809, ../sass/style.scss */
+/* line 826, ../sass/style.scss */
 .border-color1 {
   border-bottom: 2px solid #EC6310;
 }
 
-/* line 810, ../sass/style.scss */
+/* line 827, ../sass/style.scss */
 .border-color2 {
   border-bottom: 2px solid #B5EC66;
 }
 
-/* line 811, ../sass/style.scss */
+/* line 828, ../sass/style.scss */
 .border-color3 {
   border-bottom: 2px solid #66BEEC;
 }
 
-/* line 812, ../sass/style.scss */
+/* line 829, ../sass/style.scss */
 .border-color4 {
   border-bottom: 2px solid #BF529D;
 }
 
-/* line 813, ../sass/style.scss */
+/* line 830, ../sass/style.scss */
 .border-color5 {
   border-bottom: 2px solid #FFD200;
 }
