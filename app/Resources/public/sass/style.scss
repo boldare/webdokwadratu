@@ -1,4 +1,5 @@
 @import "compass";
+@import "compass/reset";
 @import "_mixins.scss";
 
 * {
@@ -42,6 +43,11 @@ body {
     &:hover {
       color: #828282;
     }
+  }
+
+  p {
+    line-height: 20px;
+    margin: 1em 0;
   }
 
 	> header {
@@ -171,10 +177,18 @@ select.menu {
 	width: 100%;
   margin: 30px 0 0 0;
 
+  h5 {
+    font: bold 10px Helvetica, Arial, sans-serif;
+    margin: 10px 0 15px 0;
+  }
+
 	ul {
 		position: relative;
 		white-space: nowrap;
 		overflow-x: scroll;
+    margin: 0 0 5px 0;
+    padding: 0 0 5px 0;
+    width: 100% !important;
 	}
 
 	li {
@@ -186,6 +200,7 @@ select.menu {
 	img {
 		width: 100%;
 		height: auto;
+    margin: 0 0 -3px 0;
 	}
 }
 
@@ -492,10 +507,18 @@ h4 {
     img {
       width: 100%;
       height: 100%;
-      margin: 0 0 -3px 0;
+      margin: 0 0 -2px 0;
     }
 
     &:hover {
+      opacity: 1;
+
+      span {
+        display: block;
+      }
+    }
+
+    &.filters {
       opacity: 1;
 
       span {
@@ -518,7 +541,7 @@ h4 {
   }
 }
 
-.filter {
+.filters {
   &.desktop {
     width: 25%;
     height: 240px;
@@ -554,6 +577,14 @@ h4 {
     }
   }
 
+  .list-description {
+    margin: 10px 0;
+
+    li {
+      margin: 5px 0;
+    }
+  }
+
   .photos {
     @include clearfix;
     width: 40%;
@@ -576,6 +607,12 @@ h4 {
         width: 33.33%;
         height: auto;
         float: left;
+        cursor: pointer;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
       }
     }
   }
@@ -682,6 +719,25 @@ h4 {
   }
   ul.list-socials li a.linkedin:hover {
     background-position: -68px -36px;
+  }
+
+  .tags {
+    h2 {
+      margin: 0 0 20px 0;
+    }
+
+    li {
+      float: left;
+      margin-left: 5px;
+      background: url('/images/bg-keywords.png') no-repeat 0 7px;
+      padding: 0 0 0 12px;
+      line-height: 20px;
+    }
+
+    a {
+      padding: 2px 0 2px 12px;
+      background: url('/images/bg-list-links.png') no-repeat 0 7px;
+    }
   }
 }
 
@@ -819,17 +875,11 @@ h4 {
   }
 }
 
-
-
-
-
-
 .border-color1 { border-bottom: 2px solid #EC6310; }
 .border-color2 { border-bottom: 2px solid #B5EC66; }
 .border-color3 { border-bottom: 2px solid #66BEEC; }
 .border-color4 { border-bottom: 2px solid #BF529D; }
 .border-color5 { border-bottom: 2px solid #FFD200; }
-
 
 // .facebook {
 //   background: url(/images/bg-fb.png) 0 -68px;
@@ -847,8 +897,4 @@ h4 {
 //   }
 // }
 
-
-
-
-@import "_old.scss";
 @import "_media.scss";
