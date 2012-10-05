@@ -299,7 +299,7 @@
   body {
     > footer {
       width: 90%;
-      margin: 0 auto;
+      margin: -1px auto 0 auto;
     }
   }
 
@@ -309,6 +309,10 @@
 
   .search {
     margin-right: 10px;
+  }
+
+  .slider {
+    border-bottom: 1px solid #E1E1E1;
   }
 
   .content {

@@ -1,7 +1,7 @@
-{% if loop.index == 6 %}
-    {# <li class="filter desktop">{% include "PeopleBundle:Default:filters.html.twig" with {'industries': industries, 'computers': computers} only %}</li> #}
+{% if loop.first %}
+{#    <li class="filters desktop">{% include "PeopleBundle:Default:filters.html.twig" with {'industries': industries, 'computers': computers} only %}</li> #}
 {% else %}
-    <li data-id="id-{{ loop.index }}" data-value={{ person.lastName|lower }}>
+    <li data-id="{{ loop.index - 1 }}" data-name={{ person.lastName|lower }} class="c{{ person.firstComputer.id }} i{{ person.industry.id }}">
         <a href="{{ path('PeopleBundlePersonName', {'firstname': person.firstName, 'lastname': person.lastName}) }}">
             <img src="/{{ person.getMainPhoto.getWebPath }}" alt="" />
             <span>{{ person.firstName }} {{ person.lastName }}</span>
