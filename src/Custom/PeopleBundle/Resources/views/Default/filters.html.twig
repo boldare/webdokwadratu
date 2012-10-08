@@ -1,4 +1,4 @@
-<div class="filters">
+<div>
     <h3>{{ 'Filters' | trans }}</h3>
 
     <section>
@@ -20,9 +20,11 @@
             {% endfor %}
         </select>
     </section>
+</div>
 
+<div>
     <h3>SORTOWANIE</h3>
-    <section id="sort-name">
+    <section class="sorting">
         <h4>Nazwisko</h4>
         <a href="#" data-sort="asc">A-Z</a>
         <a href="#" data-sort="desc">Z-A</a>

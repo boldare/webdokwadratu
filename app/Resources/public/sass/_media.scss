@@ -134,7 +134,7 @@
   .tiles {
     margin: 20px 0;
 
-    li {
+    .item {
       width: 33.33%;
     }
   }
@@ -157,6 +157,25 @@
       width: 100%;
       padding: 0 5%;
       float: none;
+    }
+  }
+
+  .filters {
+    &.mobile {
+      width: 90%;
+      margin: 30px auto 0 auto;
+      padding: 0;
+
+      > div {
+        width: 100%;
+        margin: 0 0 20px 0;
+
+        section {
+          float: none;
+          width: 100%;
+          margin: 0 0 15px 0;
+        }
+      }
     }
   }
 }
@@ -254,7 +273,7 @@
   }
 
   .tiles {
-    li {
+    .item {
       width: 20%;
     }
   }
@@ -279,9 +298,31 @@
       float: none;
     }
   }
+
+  .filters {
+    &.mobile {
+      padding: 10px;
+
+      > div {
+        float: left;
+        width: 200px;
+        margin: 0 10px 0 0;
+
+        &:first-child {
+          width: 420px;
+        }
+      }
+
+      section {
+        float: left;
+        width: 200px;
+        margin: 0 10px 15px 0;
+      }
+    }
+  }
 }
 
-@media only screen and (min-width: 721px) and (max-width: 900px) {
+@media only screen and (min-width: 721px) and (max-width: 960px) {
   .slider {
     li {
       width: 25%;
@@ -289,8 +330,30 @@
   }
 
   .tiles {
-    li {
+    .item {
       width: 16.66%;
+    }
+  }
+
+  .filters {
+    &.mobile {
+      padding: 10px;
+
+      > div {
+        float: left;
+        width: 200px;
+        margin: 0 10px 0 0;
+
+        &:first-child {
+          width: 420px;
+        }
+      }
+
+      section {
+        float: left;
+        width: 200px;
+        margin: 0 10px 15px 0;
+      }
     }
   }
 }
@@ -305,10 +368,6 @@
 
   .alphabet {
     margin-left: 10px;
-  }
-
-  .search {
-    margin-right: 10px;
   }
 
   .slider {
@@ -349,6 +408,30 @@
 
     &.desktop {
       display: none;
+    }
+  }
+
+  .filters {
+    &.mobile {
+      display: block;
+      clear: both;
+      @include clearfix;
+
+      h3 {
+        margin: 20px 0 15px 0;
+
+        &:first-child {
+          margin-top: 0px;
+        }
+      }
+
+      a {
+        line-height: 30px;
+      }
+    }
+
+    &.desktop {
+      display: none !important;
     }
   }
 }
