@@ -33,7 +33,7 @@
 
         <div class="text">
             <h3><a href="{{ path('PeopleBundlePersonNameWithColor', {'firstname': person.firstName, 'lastname': person.lastName, 'color': loop.index % 5}) }}">{{ person.lastName }} {{ person.firstName }}</a></h3>
-            {{ person.summary | raw }}
+            <p>{{ person.summary | raw }}</p>
             <a href="{{ path('PeopleBundlePersonNameWithColor', {'firstname': person.firstName, 'lastname': person.lastName, 'color': loop.index % 5}) }}" class="details">{{ 'details' | trans }}</a>
         </div>
     </div>

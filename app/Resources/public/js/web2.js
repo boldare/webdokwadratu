@@ -37,7 +37,7 @@ jQuery.fn.sortElements = (function(){
     };
 })();
 
-
+// Main script content
 $(function() {
     // Page redirecting on select change for mobile view
     var addr = 'option[value="' + window.location.pathname + '"]';
@@ -71,7 +71,7 @@ $(function() {
 
         img.stop(true, true).animate({'opacity': '0'}, 200, function(){
             $(this).attr('src', destSrc);
-            $(this).stop(true, true).animate({'opacity': '1'}, 200);
+            $(this).stop(true, true).animate({'opacity': '0.5'}, 200);
         });
     };
 
@@ -80,17 +80,23 @@ $(function() {
     });
 
     // Filters handling
-    web2.listClone = $('.tiles > ul > li').clone(true);
+    web2.listClone = $('.tiles > ul > li').not('.filters').clone(true);
+
+    $('#filter-industry, #filter-computer').coreUISelect({
+        jScrollPane : {
+           verticalDragMinHeight: 20,
+           verticalDragMaxHeight: 20,
+           showArrows : true
+        }
+     });
 
     $(document).on('change', '#filter-industry, #filter-computer', function(){
         web2.filterValue = $(this).val();
         $('.tiles').fadeOut(web2.duration, web2.filter);
-
-        // TODO: Resetowanie domyślnej wartości selecta
     });
 
     // Sort handling
-    $('#sort-name').find('a').on('click', function(e){
+    $('.sorting').find('a').on('click', function(e){
         web2.order = $(this).data('sort');
         $('.tiles').fadeOut(web2.duration, web2.sort);
         e.preventDefault();
@@ -101,10 +107,8 @@ var web2 = {
     duration: 500,
 
     filter: function(){
-        console.log(web2.filterValue);
-
         if (web2.filterValue === 'all') {
-            $('.tiles > ul > li').detach();
+            $('.tiles > ul > li').not('.filters').detach();
             $('.tiles > ul').append(web2.listClone).find('> li').css('margin', '0').show();
         }
         else {
@@ -116,7 +120,6 @@ var web2 = {
         }
 
         $('.tiles > ul').find('.filters').show();
-
         $('.tiles').fadeIn(web2.duration);
     },
 

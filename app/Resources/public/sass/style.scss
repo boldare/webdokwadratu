@@ -172,6 +172,14 @@ select.menu {
   }
 }
 
+.results {
+  margin: 5px 0 0 0;
+
+  .search {
+    margin: 0 0 5px 0;
+  }
+}
+
 .slider {
 	@include clearfix;
 	width: 100%;
@@ -240,12 +248,13 @@ h4 {
 
   article {
     @include inline-block;
-    margin: 20px 0 20px -2px;
+    margin: 20px -3px 20px 0;
     padding: 0 2% 0 0;
     width: 33.33%;
 
     &:last-child {
       margin-bottom: 30px;
+      margin-right: 0;
     }
   }
 
@@ -339,6 +348,10 @@ h4 {
     .media {
       background-position: 0 100%;
     }
+  }
+
+  h3 {
+    padding: 2px 0 0 0;
   }
 }
 
@@ -476,6 +489,10 @@ h4 {
   }
 }
 
+.list-links {
+  line-height: 1.5em;
+}
+
 .list-links li a, 
 #tags ul li a {
   color: #040404;
@@ -493,7 +510,7 @@ h4 {
   width: 100%;
   margin: 0 0 40px 0;
 
-  li {
+  .item {
     @include inline-block;
     width: 12.5%; 
     margin: 0 -3px 0 0;
@@ -506,8 +523,8 @@ h4 {
 
     img {
       width: 100%;
-      height: 100%;
-      margin: 0 0 -2px 0;
+      height: auto%;
+      margin: 0 0 -1px 0;
     }
 
     &:hover {
@@ -525,27 +542,60 @@ h4 {
         display: block;
       }
     }
-  }
 
-  span {
-    width: 100%;
-    display: none;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    text-align: center;
-    padding: 5px 10px;
-    color: #fff;
-    line-height: 16px;
-    background: rgba(0,0,0,0.5)
+    span {
+      width: 100%;
+      display: none;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      text-align: center;
+      padding: 5px 10px;
+      color: #fff;
+      line-height: 16px;
+      background: rgba(0,0,0,0.5)
+    }
   }
 }
 
 .filters {
   &.desktop {
     width: 25%;
-    height: 240px;
+    height: 360px;
     float: right;
+
+    section {
+      width: 80%;
+      margin: 0px auto 15px auto;
+    }
+
+    h3 {
+      margin: 30px 0 15px 10%;
+
+      &:first-child {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  h4 {
+    margin: 0 0 5px 0;
+  }
+
+  a {
+    font-size: 13px;
+
+    &:after {
+      content: "/";
+      margin: 0 10px;
+    }
+
+    &:last-child {
+
+      &:after {
+        display: none;
+      }
+    }
   }
 }
 
@@ -636,7 +686,7 @@ h4 {
 
       img {
         width: 100%;
-        height: 100%;
+        height: auto;
         margin: 0 0 -3px 0;
         opacity: 0.5;
       }
