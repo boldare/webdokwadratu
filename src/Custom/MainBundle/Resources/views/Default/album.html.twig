@@ -2,14 +2,8 @@
 {% set menu_album = 'active' %}
 
 {% block content %}
-    <div id="content-top">
-        <div class="box-title">
-            <h1>{{ article.title }}</h1>
-        </div>
-        <div class="clear"></div>
-    </div>
-
-    <div id="album">
+    <div class="album content" role="content">
+    	<h2>{{ article.title}}</h2>
         {{ article.content | raw }}
     </div>
 {% endblock %}

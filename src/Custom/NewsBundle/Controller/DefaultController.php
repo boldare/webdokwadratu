@@ -32,8 +32,8 @@ class DefaultController extends Controller
 
         $entity = $repository->findOneBy(array('id' => $id));
 
-        if (!$entity) 
-        {
+        // fixme: hotfix
+        if (!$entity) {
             throw $this->createNotFoundException();
         }
 

@@ -1,0 +1,459 @@
+@media only screen and (max-width: 480px) {
+  body {
+    > header {
+      margin: 30px 0 10px 0;;
+    }
+
+    > footer {
+      padding-top: 20px;
+    }
+  }
+
+  nav.menu {
+  	display: none;
+  }
+
+  select.menu {
+  	display: block;
+  }
+
+  div.alphabet {
+  	text-align: center;
+  	margin: 0 0 20px 0;;
+    padding: 0 60px;
+    float: none;
+  }
+
+  .slider {
+    margin: 20px 0 0 0;
+
+  	li {
+  		width: 50%;
+  	}
+  }
+
+  div.search {
+    float: none;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+
+    input[type="text"] {
+      width: 100%;
+    }
+
+    input[type="submit"] {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .news {
+    article {
+      width: 100%;
+    }
+  }
+
+  .single-news {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    .media {
+      float: none;
+      width: 100%;
+      padding: 0;
+      max-width: 100%;
+    }
+
+    .nav {
+      display: block;
+    }
+  }
+
+  .mobile {
+    display: block;
+
+    .partner {
+      .media-block {
+        margin-bottom: 10px;
+      }
+
+      .media {
+        width: 100px;
+        height: 100px;
+        margin: 0 15px 0 0;
+      }
+
+      .text {
+        height: 100px;
+
+        a {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .desktop {
+    display: none;
+  }
+
+  .author {
+    > .media {
+      width: auto;
+      height: auto;
+      float: none;
+      background: none;
+      margin: 0 0 5px 0;
+
+      p {
+        font-size: 17px;
+        line-height: 1em;
+        text-align: left;
+      }
+    }
+  }
+
+  .result {
+    > .media {
+      display: none;
+    }
+  }
+
+  .album {
+    img {
+      width: 100%;
+      height: auto;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  .tiles {
+    margin: 20px 0;
+
+    .item {
+      width: 33.33%;
+    }
+  }
+
+  .person {
+    padding: 0 0 30px 0;
+
+    .description {
+      width: 100%;
+      margin: 0 0 30px 0;
+      padding: 0 5%;
+      float: none;
+
+      section {
+        padding: 15px 0;
+      }
+    }
+
+    .photos {
+      width: 100%;
+      padding: 0 5%;
+      float: none;
+    }
+<<<<<<< Updated upstream
+=======
+
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+>>>>>>> Stashed changes
+  }
+
+  .filters {
+    &.mobile {
+      width: 90%;
+      margin: 30px auto 0 auto;
+      padding: 0;
+
+      > div {
+        width: 100%;
+        margin: 0 0 20px 0;
+
+        section {
+          float: none;
+          width: 100%;
+          margin: 0 0 15px 0;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 720px) {
+  body {
+    > header {
+      margin: 30px 0;
+    }
+
+    > footer {
+      padding-top: 30px;
+    }
+  }
+
+  .slider {
+  	li {
+  		width: 33.33%;
+  	}
+  }
+
+  .alphabet {
+    line-height:14px;
+    margin: 2px 0 20px 10px;
+    
+    a,
+    span {
+      @include inline-block;
+      width: 16px;
+      text-align: center;
+      margin: 0;
+
+      &:first-child {
+        margin: 0;
+      }
+    }
+
+    br {
+      display: block;
+    }
+  }
+
+  .search {
+    input[type="text"] {
+      width: 170px;
+    }
+  }
+
+  .news {
+    article {
+      width: 50%;
+    }
+  }
+
+  .single-news {
+    .media {
+      width: 38%;
+      margin: 0 2% 0 0;
+    }
+
+    .nav {
+      display: block;
+    }
+  }
+
+  .desktop {
+    .partner {
+      .media {
+        width: 150px;
+        height: 150px;
+        margin: 0 15px 0 0;
+      }
+    }
+  }
+
+  .author {
+    > .media {
+      width: 150px;
+      height: 150px;
+      margin: 0 15px 0 0;
+
+      p {
+        font-size: 15px;
+        line-height: 150px;
+      }
+    }
+  }
+
+  .author {
+    > .media {
+      width: 150px;
+      height: 150px;
+      margin: 0 15px 0 0;
+    }
+  }
+
+  .tiles {
+    .item {
+      width: 20%;
+    }
+  }
+
+  .person {
+    padding: 0 0 30px 0;
+
+    .description {
+      width: 100%;
+      margin: 0 0 30px 0;
+      padding: 0 5%;
+      float: none;
+
+      section {
+        padding: 15px 0;
+      }
+    }
+
+    .photos {
+      width: 100%;
+      padding: 0 5%;
+      float: none;
+    }
+<<<<<<< Updated upstream
+=======
+
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+>>>>>>> Stashed changes
+  }
+
+  .filters {
+    &.mobile {
+      padding: 10px;
+
+      > div {
+        float: left;
+        width: 200px;
+        margin: 0 10px 0 0;
+
+        &:first-child {
+          width: 420px;
+        }
+      }
+
+      section {
+        float: left;
+        width: 200px;
+        margin: 0 10px 15px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 721px) and (max-width: 960px) {
+  .slider {
+    li {
+      width: 25%;
+    }
+  }
+
+  .tiles {
+    .item {
+      width: 16.66%;
+    }
+  }
+
+  .filters {
+    &.mobile {
+      padding: 10px;
+
+      > div {
+        float: left;
+        width: 200px;
+        margin: 0 10px 0 0;
+
+        &:first-child {
+          width: 420px;
+        }
+      }
+
+      section {
+        float: left;
+        width: 200px;
+        margin: 0 10px 15px 0;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 960px) {
+  body {
+    > footer {
+      width: 90%;
+      margin: -1px auto 0 auto;
+    }
+  }
+
+  .alphabet {
+    margin-left: 10px;
+  }
+
+  .slider {
+    border-bottom: 1px solid #E1E1E1;
+  }
+
+  .content {
+    padding: 0 5%;
+  }
+
+  .author {
+    .contact {
+      float: none;
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .results {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .result {
+    .contact {
+      float: none;
+      width: 100%;
+      margin: 0 0 10px 0;
+    }
+  }
+
+  .filter {
+    &.mobile {
+      display: block;
+      clear: both;
+      @include clearfix;
+    }
+
+    &.desktop {
+      display: none;
+    }
+  }
+
+  .filters {
+    &.mobile {
+      display: block;
+      clear: both;
+      @include clearfix;
+
+      h3 {
+        margin: 20px 0 15px 0;
+
+        &:first-child {
+          margin-top: 0px;
+        }
+      }
+
+      a {
+        line-height: 30px;
+      }
+    }
+
+    &.desktop {
+      display: none !important;
+    }
+  }
+}

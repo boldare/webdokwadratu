@@ -1,6 +1,6 @@
-<div class="post-short">
-    <h3><a href="{{ path('NewsBundleShow', {'id' : news.id }) }}" title="{{ news.header }}">{{ news.header }}</a></h3>
-    <span class="post-date">{{ news.updatedat|date('d/m/Y') }}</span>
+<article>
+    <h4><a href="{{ path('NewsBundleShow', {'id' : news.id }) }}" title="{{ news.header }}">{{ news.header }}</a></h4>
+    <span class="date">{{ news.updatedat|date('d/m/Y') }}</span>
     <p>{{  news.extract }}</p>
-    <a href="{{ path('NewsBundleShow', {'id' : news.id }) }}" title="{{ news.header }}" class="link-more">{{ 'more' | trans }}</a>
-</div>
+    <a href="{{ path('NewsBundleShow', {'id' : news.id }) }}" title="{{ news.header }}" class="more">{{ 'more' | trans }}</a>
+</article>

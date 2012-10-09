@@ -13,8 +13,6 @@ use Custom\PeopleBundle\Form\PersonType;
  */
 class PersonController extends Controller
 {
-    const PHOTOS = 5;
-    const TAGS = 3;
     /**
      * Lists all Person entities.
      *
@@ -59,12 +57,12 @@ class PersonController extends Controller
     public function newAction()
     {
         $entity = new Person();
-        for($i = 0; $i < self::PHOTOS; $i++)
+        for($i = 0; $i < 4; $i++)
         {
             $entity->addPhotos(new \Custom\PeopleBundle\Entity\Photo());
         }
 
-        for($i = 0; $i < self::TAGS; $i++)
+        for($i = 0; $i < 3; $i++)
         {
             $entity->addTags(new \Custom\PeopleBundle\Entity\Tag());
         }
@@ -84,12 +82,12 @@ class PersonController extends Controller
     public function createAction()
     {
         $entity  = new Person();
-        for($i = 0; $i < self::PHOTOS; $i++)
+        for($i = 0; $i < 4; $i++)
         {
             $entity->addPhotos(new \Custom\PeopleBundle\Entity\Photo());
         }
 
-        for($i = 0; $i < self::TAGS; $i++)
+        for($i = 0; $i < 3; $i++)
         {
             $entity->addTags(new \Custom\PeopleBundle\Entity\Tag());
         }
@@ -122,14 +120,9 @@ class PersonController extends Controller
         $em = $this->getDoctrine()->getEntityManager();
 
         $entity = $em->getRepository('PeopleBundle:Person')->find($id);
-        
+
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Person entity.');
-        }
-
-        for ($i = count($entity->getPhotos()); $i < self::PHOTOS; $i++)
-        {
-            $entity->addPhotos(new \Custom\PeopleBundle\Entity\Photo());
         }
 
         $editForm = $this->createForm(new PersonType(), $entity);
@@ -154,11 +147,6 @@ class PersonController extends Controller
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Person entity.');
-        }
-
-        for ($i = count($entity->getPhotos()); $i < self::PHOTOS; $i++)
-        {
-            $entity->addPhotos(new \Custom\PeopleBundle\Entity\Photo());
         }
 
         $editForm   = $this->createForm(new PersonType(), $entity);

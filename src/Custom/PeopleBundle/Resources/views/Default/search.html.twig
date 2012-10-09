@@ -1,31 +1,26 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-    {% if people is empty %}
-        <div class="box-search">
-            {% render "PeopleBundle:Default:searchbox" %}
-        </div>
-    {% endif %}
-    <div id="content-top">
-        <div class="box-title">
-            <h1>{{ header | trans }}</h1>
-        </div>
-        <div class="clear"></div>
-
-    </div>
-
-    <div id="list-person">
+    <div class="results" role="content">
+        {% if people is empty %}
+            <div class="search">
+                {% render "PeopleBundle:Default:searchbox" %}
+            </div>
+        {% endif %}
+        
+        <h2>{{ header | trans }}</h2>
+        
         {% for person in people %}
             {% include "PeopleBundle:Default:person_long.html.twig" with {'person': person, 'loop': loop} only %}
         {% else %}
-            <div id="box-persons-notice" class="center">
+            <div class="empty">
                 <h3>{{ 'No people found' | trans }}</h3>
-                <a href="{{ path('PeopleBundlePeople') }}" class="link-more" title="">{{ 'Back to the people list' | trans }}</a>
+                <a href="{{ path('PeopleBundlePeople') }}" class="back" title="">{{ 'Back to the people list' | trans }}</a>
             </div>
         {% endfor %}
     </div>
 {% endblock %}
 
 {% block back_button %}
-    <a class="link-back" href="{{ path('PeopleBundlePeople') }}">{{ 'All people' | trans }}</a>
+    <a class="back" href="{{ path('PeopleBundlePeople') }}">{{ 'All people' | trans }}</a>
 {% endblock %}

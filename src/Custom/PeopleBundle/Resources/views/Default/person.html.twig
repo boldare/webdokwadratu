@@ -2,9 +2,9 @@
 {% import 'PeopleBundle:Default:borders.html.twig' as borders %}
 
 {% block content %}
-    <div id="h">
-        <div id="h-left">
-            <h1>{{ person.firstName}} {{ person.lastName }}</h1>
+    <div class="person" role="content">
+        <div class="description">
+            <h2>{{ person.firstName}} {{ person.lastName }}</h2>
 
             <ul class="list-socials">
                 {% if not person.twitter is empty %}
@@ -18,8 +18,6 @@
                 {% endif %}
             </ul>
 
-            <div class="clear"></div>
-
             <ul class="list-links">
                 {% if not person.website is empty %}
                     <li><a href="{{ person.website }}" target="_blank">{{ person.website }}</a></li>
@@ -31,51 +29,94 @@
                 <li><b>{{ 'Industry' | trans }}:</b> {{ person.industry.name }}</li>
             </ul>
 
-            <div id="h-description">
+            <section>
                 <p>{{ person.description | raw }}</p>
 
-                <div class="cite">
-                    <p class="cite">{{ person.quotation }}</p>
-                </div>
-            </div>
-
-            {% block back_button %}
-                <a class="link-back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
-            {% endblock %}
+                <blockquote>{{ person.quotation }}</blockquote>
+            </section>
 
             <div class="share-buttons">
                 {% include "MainBundle:Default:share.html.twig" %}
+<<<<<<< Updated upstream
+
+                {% block back_button %}
+                    <a class="back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
+                {% endblock %}
             </div>
-            <div id="box-h-more">
-                <h2>{{ 'See also' | trans }}</h2>
-                {% include "PeopleBundle:Default:seealso.html.twig" with {'people': people } only %}
+
+            <div class="tags">
+                <h2>{{ 'Keywords' | trans }}</h2>
+=======
+
+                {% block back_button %}
+                    <a class="back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
+                {% endblock %}
+            </div>
+
+            <div class="see-also desktop">
+                <h3>{{ 'See also' | trans }}</h3>
+
+                <ul>
+                    {% include "PeopleBundle:Default:seealso.html.twig" with {'people': people } only %}
+                </ul>
             </div>
         </div>
 
-        <div id="h-right">
-            <div class="photo-big {{ borders.color(color) }}">
-                  <img width="410" height="410" src="/{{ person.photos.next.getWebPath }}" alt="" />
+        <div class="photos">
+            <div class="main">
+                  <img src="/{{ person.photos.next.getWebPath }}" class="{{ borders.color(color) }}" alt="" />
             </div>
-            {% spaceless %}
-                <div class="photo-small">
-                    {% for photo in person.photos %}
-                        {% if loop.index > 2 %}
-                            <img width="120" height="120" class="photo-small photo-small0{{ loop.index -2 }}" src="/{{ photo.getWebPath }}" />
-                        {% endif %}
-                    {% endfor %}
-                </div>
-            {% endspaceless %}
 
+            <div class="list">
+                {% for photo in person.photos %}
+                    {% if loop.index > 2 %}
+                        <img class="photo-small0{{ loop.index -1 }}" src="/{{ photo.getWebPath }}" />
+                    {% endif %}
+                {% endfor %}
+            </div>
 
-            <div id="tags">
-                <h2>{{ 'Keywords' | trans }}</h2>
+            <div class="tags">
+                <h3>{{ 'Keywords' | trans }}</h3>
+>>>>>>> Stashed changes
                 <ul>
                     {% for tag in person.tags %}
                         <li>{{ tag.name }}</li>
                     {% endfor %}
                 </ul>
             </div>
+
+            <div class="see-also mobile">
+                <h3>{{ 'See also' | trans }}</h3>
+
+                <ul>
+                    {% include "PeopleBundle:Default:seealso.html.twig" with {'people': people } only %}
+                </ul>
+            </div>
         </div>
-        <div class="clear"></div>
+<<<<<<< Updated upstream
+
+        <div class="photos">
+            <div class="main">
+                  <img src="/{{ person.photos.next.getWebPath }}" class="{{ borders.color(color) }}" alt="" />
+            </div>
+
+            <div class="list">
+                {% for photo in person.photos %}
+                    {% if loop.index > 2 %}
+                        <img class="photo-small0{{ loop.index -1 }}" src="/{{ photo.getWebPath }}" />
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <div class="see-also">
+                <h2>{{ 'See also' | trans }}</h2>
+
+                <ul>
+                    {% include "PeopleBundle:Default:seealso.html.twig" with {'people': people } only %}
+                </ul>
+            </div>
+        </div>
+=======
+>>>>>>> Stashed changes
     </div>
 {% endblock %}

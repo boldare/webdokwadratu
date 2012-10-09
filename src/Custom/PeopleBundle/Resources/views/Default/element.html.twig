@@ -1,15 +1,10 @@
-<li data-id="id-{{ loop.index }}" data-value={{ person.lastName|lower }} class="i0{{ person.industry.id }} c0{{ person.firstComputer.id}}">
-    <a href="{{ path('PeopleBundlePersonName', {'firstname': person.firstName, 'lastname': person.lastName}) }}">
-        <img src="/{{ person.getMainPhoto.getWebPath }}" width="120" height="120" />
-        <strong>{{ person.firstName }} {{ person.lastName }}</strong>
-        <span>
-            {% for tag in person.tags %}
-                {{ tag.name -}}
-                {% if not loop.last %}
-                    {{- ',' -}}
-                {% endif %}
-            {% endfor %}
-        </span>
-        <span class="all-bg"></span>
-    </a>
-</li>
+{% if loop.first %}
+    <li class="filters desktop">{% include "PeopleBundle:Default:filters.html.twig" with {'industries': industries, 'computers': computers} only %}</li>
+{% else %}
+    <li data-id="{{ loop.index - 1 }}" data-name={{ person.lastName|lower }} class="c{{ person.firstComputer.id }} i{{ person.industry.id }} item">
+        <a href="{{ path('PeopleBundlePersonName', {'firstname': person.firstName, 'lastname': person.lastName}) }}">
+            <img src="/{{ person.getMainPhoto.getWebPath }}" alt="" />
+            <span>{{ person.firstName }} {{ person.lastName }}</span>
+        </a>
+    </li>
+{% endif %}

@@ -1,107 +1,152 @@
-$(document).ready(function() {
-    var clickedButton;
+// Sort function
+jQuery.fn.sortElements = (function(){
+    var sort = [].sort;
+ 
+    return function(comparator, getSortable) {
+        getSortable = getSortable || function(){return this;};
 
-    $('#list > li:visible').eq(6).addClass('clear');
-    $('#list > li:visible').eq(12).addClass('clear');
-    $('#list > li:visible').eq(18).addClass('clear');
+        var placements = this.map(function(){
+            var sortElement = getSortable.call(this),
+                parentNode = sortElement.parentNode,
+ 
+                // Since the element itself will change position, we have
+                // to have some way of storing its original position in
+                // the DOM. The easiest way is to have a 'flag' node:
+                nextSibling = parentNode.insertBefore(
+                    document.createTextNode(''),
+                    sortElement.nextSibling
+                );
+ 
+            return function() {
+                if (parentNode === this) {
+                    throw new Error(
+                        "You can't sort elements if any one is a descendant of another."
+                    );
+                }
+ 
+                // Insert before flag:
+                parentNode.insertBefore(this, nextSibling);
+                // Remove flag:
+                parentNode.removeChild(nextSibling);
+            };
+        });
+ 
+        return sort.call(this, comparator).each(function(i){
+            placements[i].call(getSortable.call(this));
+        });
+    };
+})();
 
-    $(' > .select-dropdown > li > a', $('#filter-industry, #filter-computer')).click(web2.filterClickHandle);
-    $('#sort-name > .select-dropdown > li > a').click(web2.sortClickHandle);
-
-    // save original list
-    web2.origList = $('#list > li').clone(true);
-
-    $('.button').click(function (e) {
-      $(this).children('.select-dropdown').slideToggle();
-      clickedButton = $(this).children('.select-dropdown');
+// Main script content
+$(function() {
+    // Page redirecting on select change for mobile view
+    var addr = 'option[value="' + window.location.pathname + '"]';
+    $('select.menu').find(addr).attr('selected', true);
+    
+    $('select.menu').on('change', function(){
+        window.location = $(this).val();
     });
 
-    $('body').click(function () {
-      var elements = $('.button').children('.select-dropdown');
+    // Custom scrollbar init
+    setTimeout(function(){
+        $(".slider ul").niceScroll({
+            autohidemode: false,
+            cursorcolor:'#E1E1E1',
+            cursorwidth: '8px',
+            cursorborderradius: '4px',
+            cursorminheight: '50'
+        });
+    }, 200);
 
-      if (clickedButton !== undefined) {
-        elements = elements.not(clickedButton);
-      }
+    // Person gallery images swapping
+    function swapPhoto(img) {
+        var imgSrc = img.attr('src'),
+            dest = $('.photos .main').find('img'),
+            destSrc = dest.attr('src');
 
-      elements.slideUp();
-      clickedButton = undefined;
+<<<<<<< Updated upstream
+        dest.stop(true, true).animate({'opacity': '0'}, 200, function(){
+            $(this).attr('src', imgSrc);
+            $(this).stop(true, true).animate({'opacity': '1'}, 200);
+        });
+
+        img.stop(true, true).animate({'opacity': '0'}, 200, function(){
+            $(this).attr('src', destSrc);
+            $(this).stop(true, true).animate({'opacity': '0.5'}, 200);
+=======
+        dest.stop(true, true).animate({'opacity': '0'}, 300, function(){
+            $(this).attr('src', imgSrc);
+            $(this).stop(true, true).animate({'opacity': '1'}, 300);
+        });
+
+        img.stop(true, true).animate({'opacity': '0'}, 300, function(){
+            $(this).attr('src', destSrc);
+            $(this).stop(true, true).animate({'opacity': '0.5'}, 300);
+>>>>>>> Stashed changes
+        });
+    };
+
+    $('.photos .list').find('img').on('click', function(e){
+        swapPhoto($(this));
+    });
+
+    // Filters handling
+    web2.listClone = $('.tiles > ul > li').not('.filters').clone(true);
+
+    $('#filter-industry, #filter-computer').coreUISelect({
+        jScrollPane : {
+           verticalDragMinHeight: 20,
+           verticalDragMaxHeight: 20,
+           showArrows : true
+        }
+     });
+
+    $(document).on('change', '#filter-industry, #filter-computer', function(){
+        web2.filterValue = $(this).val();
+        $('.tiles').fadeOut(web2.duration, web2.filter);
+    });
+
+    // Sort handling
+    $('.sorting').find('a').on('click', function(e){
+        web2.order = $(this).data('sort');
+        $('.tiles').fadeOut(web2.duration, web2.sort);
+        e.preventDefault();
     });
 });
 
 var web2 = {
-    duration: 1000,
-    filter: null,
-    order: null,
-    origList: null,
+    duration: 500,
 
-    filterClickHandle: function(e) {
-        e.preventDefault();
-
-        web2.filter = $(this).data().value;
-
-        $("#list").fadeOut(web2.duration, web2.filterHandle);
-    },
-
-    filterHandle: function() {
-        $('#list > li.clear').removeClass('clear');
-
-        if ('all' === web2.filter) {
-            // restore original list
-            $('#list > li').detach();
-            $('#list').append(web2.origList);
-
-            $('#list > li').show();
+    filter: function(){
+        if (web2.filterValue === 'all') {
+            $('.tiles > ul > li').not('.filters').detach();
+            $('.tiles > ul').append(web2.listClone).find('> li').css('margin', '0').show();
         }
         else {
-            $('#list').children(':not(.' + web2.filter + ')').hide();
-            $('#list').children('.' + web2.filter).show();
+            $('.tiles > ul > li').hide().each(function(){
+                if ($(this).hasClass(web2.filterValue)) {
+                    $(this).show();
+                }
+            });
         }
 
-        $('#list').fadeIn(web2.duration);
-
-        $('#list > li:visible').eq(6).addClass('clear');
-        $('#list > li:visible').eq(12).addClass('clear');
-        $('#list > li:visible').eq(18).addClass('clear');
+        $('.tiles > ul').find('.filters').show();
+        $('.tiles').fadeIn(web2.duration);
     },
 
-    sortClickHandle: function(e) {
-        e.preventDefault();
-        web2.order = $(this).data().value;
-
-        $("#list").fadeOut(web2.duration, web2.sortHandle);
-    },
-
-    sortHandle: function() {
-        $('#list > li.clear').removeClass('clear');
-        var orderCallback = null;
-
-        if ('asc' === web2.order) {
-            orderCallback = web2.cmpAsc;
-        }
-        else {
-            orderCallback = web2.cmpDsc;
+    sort: function(){
+        if (web2.order === 'asc') {
+            web2.sorted = $('.tiles > ul > li').sortElements(function(a, b){
+                return $(a).data('name') > $(b).data('name') ? 1 : -1;
+            });
+        } else {
+            web2.sorted = $('.tiles > ul > li').sortElements(function(a, b){
+                return $(a).data('name') < $(b).data('name') ? 1 : -1;
+            });
         }
 
-        var sorted = $('#list > li').sort(orderCallback);
-
-        $('#list > li').detach();
-        $('#list').append(sorted);
-        $('#list').fadeIn(web2.duration);
-
-        $('#list > li:visible').eq(6).addClass('clear');
-        $('#list > li:visible').eq(12).addClass('clear');
-        $('#list > li:visible').eq(18).addClass('clear');
-    },
-
-    cmpAsc: function(o1, o2) {
-        var o1 = $(o1);
-        var o2 = $(o2);
-        return ((o1.data().value == o2.data().value) ? 0 : ((o1.data().value > o2.data().value) ? 1 : -1));
-    },
-
-    cmpDsc: function(o1, o2) {
-        var o1 = $(o1);
-        var o2 = $(o2);
-        return ((o1.data().value == o2.data().value) ? 0 : ((o1.data().value < o2.data().value) ? 1 : -1));
+        $('.tiles > ul > li').detach();
+        $('.tiles > ul').append(web2.sorted).find('> li').css('margin', '0');
+        $('.tiles').fadeIn(web2.duration);
     }
 };

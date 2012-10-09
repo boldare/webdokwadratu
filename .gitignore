@@ -1,3 +1,6 @@
+.DS_Store
+._*
+/app/Resources/public/.sass-cache/
 /app/bootstrap*
 /app/config/parameters.ini
 /app/cache/*
