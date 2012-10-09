@@ -1,16 +1,9 @@
 {% import 'PeopleBundle:Default:borders.html.twig' as borders %}
 {% for person in people %}
-<<<<<<< Updated upstream
-	{% if loop.index < 4 %}
-	    <li class="{{ borders.color(loop.index) }}">
-	        <a href="{{ path('PeopleBundlePersonWithColor', {'id': person.id, 'color': loop.index}) }}">
-		        <img src="/{{ person.getMainPhoto.getWebPath }}" alt=""/>
-=======
 	{% if loop.index < 5 %}
 	    <li>
 	        <a href="{{ path('PeopleBundlePersonWithColor', {'id': person.id, 'color': loop.index}) }}">
 		        <img src="/{{ person.getMainPhoto.getWebPath }}" alt="" class="{{ borders.color(loop.index) }}"/>
->>>>>>> Stashed changes
 		        <span>{{ person.firstName }} {{ person.lastName }}</span>
 	        </a>
 	    </li>

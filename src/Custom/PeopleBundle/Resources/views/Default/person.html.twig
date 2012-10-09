@@ -37,16 +37,6 @@
 
             <div class="share-buttons">
                 {% include "MainBundle:Default:share.html.twig" %}
-<<<<<<< Updated upstream
-
-                {% block back_button %}
-                    <a class="back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
-                {% endblock %}
-            </div>
-
-            <div class="tags">
-                <h2>{{ 'Keywords' | trans }}</h2>
-=======
 
                 {% block back_button %}
                     <a class="back" href="javascript: history.go(-1)">{{ 'back' | trans }}</a>
@@ -77,7 +67,7 @@
 
             <div class="tags">
                 <h3>{{ 'Keywords' | trans }}</h3>
->>>>>>> Stashed changes
+
                 <ul>
                     {% for tag in person.tags %}
                         <li>{{ tag.name }}</li>
@@ -93,30 +83,5 @@
                 </ul>
             </div>
         </div>
-<<<<<<< Updated upstream
-
-        <div class="photos">
-            <div class="main">
-                  <img src="/{{ person.photos.next.getWebPath }}" class="{{ borders.color(color) }}" alt="" />
-            </div>
-
-            <div class="list">
-                {% for photo in person.photos %}
-                    {% if loop.index > 2 %}
-                        <img class="photo-small0{{ loop.index -1 }}" src="/{{ photo.getWebPath }}" />
-                    {% endif %}
-                {% endfor %}
-            </div>
-
-            <div class="see-also">
-                <h2>{{ 'See also' | trans }}</h2>
-
-                <ul>
-                    {% include "PeopleBundle:Default:seealso.html.twig" with {'people': people } only %}
-                </ul>
-            </div>
-        </div>
-=======
->>>>>>> Stashed changes
     </div>
 {% endblock %}

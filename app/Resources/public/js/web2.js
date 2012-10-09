@@ -64,16 +64,6 @@ $(function() {
             dest = $('.photos .main').find('img'),
             destSrc = dest.attr('src');
 
-<<<<<<< Updated upstream
-        dest.stop(true, true).animate({'opacity': '0'}, 200, function(){
-            $(this).attr('src', imgSrc);
-            $(this).stop(true, true).animate({'opacity': '1'}, 200);
-        });
-
-        img.stop(true, true).animate({'opacity': '0'}, 200, function(){
-            $(this).attr('src', destSrc);
-            $(this).stop(true, true).animate({'opacity': '0.5'}, 200);
-=======
         dest.stop(true, true).animate({'opacity': '0'}, 300, function(){
             $(this).attr('src', imgSrc);
             $(this).stop(true, true).animate({'opacity': '1'}, 300);
@@ -82,7 +72,6 @@ $(function() {
         img.stop(true, true).animate({'opacity': '0'}, 300, function(){
             $(this).attr('src', destSrc);
             $(this).stop(true, true).animate({'opacity': '0.5'}, 300);
->>>>>>> Stashed changes
         });
     };
 
